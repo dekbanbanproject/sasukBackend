@@ -7,8 +7,8 @@
           <li class="nav-item">
             <a class="navbar-brand" href="index.html">
               {{-- <img class="brand-logo" alt="modern admin logo" src="../../../app-assets/images/logo/logo.png"> --}}
-              <img src="{{ asset('/img/ss.png') }}" class="brand-logo" alt="modern admin logo" width="40" height="40">
-              <h3 class="brand-text">Sasuk Phonthong</h3>
+              <img src="{{ asset('/img/ss.png') }}" class="brand-logo" alt="modern admin logo" width="45" height="40">
+              <h3 class="brand-text">ระบบฐานข้อมูล เขตสุขภาพที่ 1</h3>
             </a>
           </li>
           <li class="nav-item d-md-none">

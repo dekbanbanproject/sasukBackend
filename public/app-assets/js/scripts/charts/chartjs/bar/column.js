@@ -1,15 +1,6 @@
-/*=========================================================================================
-    File Name: column.js
-    Description: Chartjs column chart
-    ----------------------------------------------------------------------------------------
-    Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
-    Version: 1.0
-    Author: PIXINVENT
-    Author URL: http://www.themeforest.net/user/pixinvent
-==========================================================================================*/
 
 // Column chart
-// ------------------------------
+
 $(window).on("load", function(){
 
     //Get the context of the Chart canvas element we want to select
@@ -62,7 +53,7 @@ $(window).on("load", function(){
 
     // Chart Data
     var chartData = {
-        labels: ["January", "February", "March", "April", "May"],
+        labels: ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม","มิถุนายน","กรกฎาคม","สิงหาคม","กันยายน","ตุลาคม","พฤศจิกายน","ธันวาคม"],
         datasets: [{
             label: "My First dataset",
             data: [65, 59, 80, 81, 56],

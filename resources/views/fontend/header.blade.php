@@ -8,7 +8,7 @@
                         <!-- Logo -->
                         <div class="col-xl-3 col-lg-3 col-md-1">
                             <div class="logo">
-                                <a href="/"><img src="{{ asset('/img/ss.png') }}" alt="" width="80" height="80"> <h3>Sasuk Phonthong</h3></a>
+                                <a href="/"><img src="{{ asset('/img/ss.png') }}" alt="" width="80" height="80"> <h3>Sasuk </h3></a>
                                
                             </div>
                         </div>
