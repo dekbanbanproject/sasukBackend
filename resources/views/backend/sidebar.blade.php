@@ -2,7 +2,7 @@
     <div class="main-menu-content">
       <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
           <li class=" nav-item"><a href="{{url('backend_dashboard')}}"><i class="la la-tachometer"></i><span class="menu-title" data-i18n="nav.dash.main">Dashboard</span></a></li>
-          {{-- <li class=" nav-item"><a href="{{url('backend/config/category')}}"><i class="la la-folder"></i><span class="menu-title" data-i18n="nav.dash.main">Category</span></a> --}}
+          <li class=" nav-item"><a href="{{url('backend/dashboardperson')}}"><i class="la la-group"></i><span class="menu-title" data-i18n="nav.dash.main">บุคลากร</span></a>
           {{-- <li class=" nav-item"><a href="{{url('backend/dashboard/indexdh')}}"><i class="la la-folder"></i><span class="menu-title" data-i18n="nav.dash.main">Dashboard เขต 1</span></a> --}}
           </li>
           {{-- <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="nav.templates.main">Templates</span></a>

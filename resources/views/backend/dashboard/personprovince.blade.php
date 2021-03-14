@@ -2,100 +2,9 @@
     <div class="content-wrapper">
       <div class="content-header row">
       </div>
-      <div class="content-body">
-      
-         <div class="row">
-          <div class="col-xl-3 col-lg-6 col-12">
-            <div class="card pull-up">
-                <div class="card-content">
-                    <div class="card-body">
-                        <div class="media d-flex">
-                            <div class="media-body text-left">
-                                <h3 class="success">{{$per}}</h3>
-                                <h6>บุคคลากรทั้งหมด</h6>
-                            </div>
-                            <div>
-                                <i class="icon-user-follow success font-large-2 float-right"></i>
-                            </div>
-                        </div>
-                        <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-lg-6 col-12">
-          <div class="card pull-up">
-              <div class="card-content">
-                  <div class="card-body">
-                      <div class="media d-flex">
-                          <div class="media-body text-left">
-                              <h3 class="warning">{{$assets}}</h3>
-                              <h6>รายการครุภัณฑ์ทั้งหมด</h6>
-                          </div>
-                          <div>
-                              <i class="icon-pie-chart warning font-large-2 float-right"></i>
-                          </div>
-                      </div>
-                      <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                          <div class="progress-bar bg-gradient-x-warning" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-          <div class="col-xl-3 col-lg-6 col-12">
-              <div class="card pull-up">
-                  <div class="card-content">
-                      <div class="card-body">
-                          <div class="media d-flex">
-                              <div class="media-body text-left">
-                                  <h3 class="info">{{$assetbuildings}}</h3>
-                                  <h6>อาคารสิ่งปลูกสร้างทั้งหมด</h6>
-                              </div>
-                              <div>
-                                  <i class="icon-basket-loaded info font-large-2 float-right"></i>
-                              </div>
-                          </div>
-                          <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                            @if ($assetbuildings <= 200)
-                              <div class="progress-bar bg-gradient-x-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                            @elseif ($assetbuildings <= 400)
-                              <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div> 
-                              @elseif ($assetbuildings >= 600 )
-                              <div class="progress-bar bg-gradient-x-danger" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>  
-                            @endif
-                              {{-- <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div> --}}
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>                   
-          <div class="col-xl-3 col-lg-6 col-12">
-              <div class="card pull-up">
-                  <div class="card-content">
-                      <div class="card-body">
-                          <div class="media d-flex">
-                              <div class="media-body text-left">
-                                  <h3 class="danger">{{$chaingmai}}</h3>
-                                  <h6>Customer</h6>
-                              </div>
-                              <div>
-                                  <i class="icon-heart danger font-large-2 float-right"></i>
-                              </div>
-                          </div>
-                          <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                              <div class="progress-bar bg-gradient-x-danger" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-         
+      <div class="content-body">        
         <div class="row">
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-4">
               <div class="card">
                 <div class="card-header">
                   <h4 class="card-title">จังหวัด</h4>
@@ -169,7 +78,7 @@
               </div>
             </div>
            
-            <div class="col-12 col-md-9">
+            <div class="col-12 col-md-8">
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Person Chart</h4>
@@ -190,7 +99,31 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="row">  
+          <div class="col-12 col-md-12">
+              <div class="card">
+                  <div class="card-header">
+                      <h4 class="card-title">Person Type Chart</h4>
+                      <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                      <div class="heading-elements">
+                          <ul class="list-inline mb-0">
+                              <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                              <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                              <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                              <li><a data-action="close"><i class="ft-x"></i></a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="card-content collapse show">
+                      <div class="card-body">
+                          <canvas id="personkind-chart" height="500"></canvas>
+                      </div>
+                  </div>
+              </div>
           </div>
+      </div>
       
       </div>
     </div>

@@ -24,8 +24,8 @@ Route::post('check',[UserAuthController::class,'check'])->name('auth.check');
 Route::get('backend_dashboard',[UserAuthController::class,'backend_dashboard'])->name('backend_dashboard');
 
 
-Route::get('backend/dashboard/indexdh',[DashController::class,'indexdh'])->name('dash.indexdh');
-
+// Route::get('backend/dashboard/indexdh',[DashController::class,'indexdh'])->name('dash.indexdh');
+Route::get('backend/dashboardperson',[DashController::class,'dashboardperson'])->name('dash.dashboardperson');
 
 
 

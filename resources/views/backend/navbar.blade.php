@@ -8,7 +8,7 @@
             <a class="navbar-brand" href="index.html">
               {{-- <img class="brand-logo" alt="modern admin logo" src="../../../app-assets/images/logo/logo.png"> --}}
               <img src="{{ asset('/img/ss.png') }}" class="brand-logo" alt="modern admin logo" width="45" height="40">
-              <h3 class="brand-text">ระบบฐานข้อมูล เขตสุขภาพที่ 1</h3>
+              <h3 class="brand-text">ระบบฐานข้อมูลเขตสุขภาพที่ 1</h3>
             </a>
           </li>
           <li class="nav-item d-md-none">
@@ -21,7 +21,7 @@
           <ul class="nav navbar-nav mr-auto float-left">
             <li class="nav-item d-none d-md-block"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu"></i></a></li>
             <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i class="ficon ft-maximize"></i></a></li>
-            <li class="dropdown nav-item mega-dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Memu</a>
+            {{-- <li class="dropdown nav-item mega-dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Memu</a>
               <ul class="mega-dropdown-menu dropdown-menu row">
                 <li class="col-md-2">
                   <h6 class="dropdown-menu-header text-uppercase mb-1"><i class="la la-newspaper-o"></i> News</h6>
@@ -147,12 +147,12 @@
                   </form>
                 </li>
               </ul>
-            </li>
-            <li class="nav-item nav-search"><a class="nav-link nav-link-search" href="#"><i class="ficon ft-search"></i></a>
+            </li> --}}
+            {{-- <li class="nav-item nav-search"><a class="nav-link nav-link-search" href="#"><i class="ficon ft-search"></i></a>
               <div class="search-input">
                 <input class="input" type="text" placeholder="Explore Modern...">
               </div>
-            </li>
+            </li> --}}
           </ul>
           <ul class="nav navbar-nav float-right">
             <li class="dropdown dropdown-user nav-item">
@@ -245,7 +245,7 @@
                 <li class="dropdown-menu-footer"><a class="dropdown-item text-muted text-center" href="javascript:void(0)">Read all notifications</a></li>
               </ul>
             </li>
-            <li class="dropdown dropdown-notification nav-item">
+            {{-- <li class="dropdown dropdown-notification nav-item">
               <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-mail">             </i></a>
               <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
                 <li class="dropdown-menu-header">
@@ -318,7 +318,7 @@
                 </li>
                 <li class="dropdown-menu-footer"><a class="dropdown-item text-muted text-center" href="javascript:void(0)">Read all messages</a></li>
               </ul>
-            </li>
+            </li> --}}
           </ul>
         </div>
       </div>
