@@ -120,11 +120,93 @@ function backend_dashboard(Request $request)
     // ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
     // ->where('hospcode.chwpart','=',58)
     // ->count();
+    $As_chaingmai = DB::table('assets')
+    ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
+    ->where('hospcode.chwpart','=',50)
+    ->count();
+    $As_lamphoon = DB::table('assets')
+    ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
+    ->where('hospcode.chwpart','=',51)
+    ->count();
+    $As_lampang = DB::table('assets')
+    ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
+    ->where('hospcode.chwpart','=',52)
+    ->count();
+    $As_lamphoon = DB::table('assets')
+    ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
+    ->where('hospcode.chwpart','=',51)
+    ->count();
+    $As_prae = DB::table('assets')
+    ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
+    ->where('hospcode.chwpart','=',54)
+    ->count();
+    $As_nan = DB::table('assets')
+    ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
+    ->where('hospcode.chwpart','=',55)
+    ->count();
+    $As_payoua = DB::table('assets')
+    ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
+    ->where('hospcode.chwpart','=',56)
+    ->count();
+    $As_chaingray= DB::table('assets')
+    ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
+    ->where('hospcode.chwpart','=',57)
+    ->count();
+    $As_maehongson= DB::table('assets')
+    ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
+    ->where('hospcode.chwpart','=',58)
+    ->count();
+
+    ////////////////////////////////////////////////////////////////
+    
+    $buil_chaingmai = DB::table('assetbuildings')
+    ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
+    ->where('hospcode.chwpart','=',50)
+    ->count();
+    $buil_lamphoon = DB::table('assetbuildings')
+    ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
+    ->where('hospcode.chwpart','=',51)
+    ->count();
+    $buil_lampang = DB::table('assetbuildings')
+    ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
+    ->where('hospcode.chwpart','=',52)
+    ->count();
+    $buil_lamphoon = DB::table('assetbuildings')
+    ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
+    ->where('hospcode.chwpart','=',51)
+    ->count();
+    $buil_prae = DB::table('assetbuildings')
+    ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
+    ->where('hospcode.chwpart','=',54)
+    ->count();
+    $buil_nan = DB::table('assetbuildings')
+    ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
+    ->where('hospcode.chwpart','=',55)
+    ->count();
+    $buil_payoua = DB::table('assetbuildings')
+    ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
+    ->where('hospcode.chwpart','=',56)
+    ->count();
+    $buil_chaingray= DB::table('assetbuildings')
+    ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
+    ->where('hospcode.chwpart','=',57)
+    ->count();
+    $buil_maehongson= DB::table('assetbuildings')
+    ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
+    ->where('hospcode.chwpart','=',58)
+    ->count();
 
     return view('backend/dashboard',[
         'data'=>$data,'per'=>$per,'assets'=>$assets,'assetbuildings'=>$assetbuildings,
         'chaingmai'=>$chaingmai, 'lampang'=>$lampang, 'lamphoon'=>$lamphoon,'prae'=>$prae,'nan'=>$nan,
         'payoua'=>$payoua, 'chaingray'=>$chaingray,'maehongson'=>$maehongson,
+
+        'As_chaingmai'=>$As_chaingmai, 'As_lampang'=>$As_lampang, 'As_lamphoon'=>$As_lamphoon,'As_prae'=>$As_prae,'As_nan'=>$As_nan,
+        'As_payoua'=>$As_payoua, 'As_chaingray'=>$As_chaingray,'As_maehongson'=>$As_maehongson,
+
+        'buil_chaingmai'=>$buil_chaingmai, 'buil_lampang'=>$buil_lampang, 'buil_lamphoon'=>$buil_lamphoon,'buil_prae'=>$buil_prae,'buil_nan'=>$buil_nan,
+        'buil_payoua'=>$buil_payoua, 'buil_chaingray'=>$buil_chaingray,'buil_maehongson'=>$buil_maehongson,
+
     ]);
 }
 

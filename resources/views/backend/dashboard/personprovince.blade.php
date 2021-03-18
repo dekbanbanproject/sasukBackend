@@ -7,7 +7,7 @@
             <div class="col-12 col-md-4">
               <div class="card">
                 <div class="card-header">
-                  <h4 class="card-title">จังหวัด</h4>
+                  <h4 class="card-title">จำนวนบุคลากรแต่ละจังหวัด</h4>
                   <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                   <div class="heading-elements">
                     <ul class="list-inline mb-0">
@@ -17,10 +17,14 @@
                 </div>
                 <div class="card-content collapse show">
                   <div class="card-body pt-0">
-                    <p class="pt-1">เชียงใหม่
+                    {{-- @foreach ($hos_persons as $item) --}}
+                    {{-- <p class="pt-1" ><a href="{{ url('backend/person_province_only/'.$hos_persons->HOSPCODE)}}">เชียงใหม่</a>   --}}
+                    
+                      <p class="pt-1">เชียงใหม่
                       <span class="float-right">
                         <span class="text-bold-600">{{$chaingmai}}</span> คน</span>
                     </p>
+                    {{-- @endforeach --}}
                     <div class="progress progress-sm mt-1 mb-0 box-shadow-1">
                       <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 48%" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
