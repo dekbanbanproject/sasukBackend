@@ -35,7 +35,7 @@
                               <h6>รายการครุภัณฑ์ทั้งหมด</h6>
                           </div>
                           <div>
-                              <i class="icon-pie-chart warning font-large-2 float-right"></i>
+                              <i class="icon-user-follow warning font-large-2 float-right"></i>
                           </div>
                       </div>
                       <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
@@ -55,7 +55,7 @@
                                   <h6>อาคารสิ่งปลูกสร้างทั้งหมด</h6>
                               </div>
                               <div>
-                                  <i class="icon-basket-loaded info font-large-2 float-right"></i>
+                                  <i class="icon-user-follow info font-large-2 float-right"></i>
                               </div>
                           </div>
                           <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
@@ -82,7 +82,7 @@
                                   <h6>Customer</h6>
                               </div>
                               <div>
-                                  <i class="icon-heart danger font-large-2 float-right"></i>
+                                  <i class="icon-user-follow danger font-large-2 float-right"></i>
                               </div>
                           </div>
                           <div class="progress progress-sm mt-1 mb-0 box-shadow-2">

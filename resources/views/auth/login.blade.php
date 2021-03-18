@@ -13,7 +13,7 @@
     <div class="login-form-wrap">
       <div class="left-section">
         <div class="title">
-          <h1>Sasuk Phonthong!</h1>
+          <h1>sign in Sasuk!</h1>
           <p>sign in to your account!</p>
         </div>
         <div class="form">

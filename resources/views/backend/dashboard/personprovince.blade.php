@@ -118,7 +118,7 @@
                   </div>
                   <div class="card-content collapse show">
                       <div class="card-body">
-                          <canvas id="personkind-chart" height="500"></canvas>
+                          <canvas id="personkind-chart" height="600"></canvas>
                       </div>
                   </div>
               </div>
