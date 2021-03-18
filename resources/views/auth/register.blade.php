@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login | sasukphonthong</title>
+    <title>Login | sasuk</title>
     <link rel="stylesheet" href="{{ asset('assets/css/dis.css') }}">
 
 </head>
@@ -12,7 +12,7 @@
     <div class="login-form-wrap">
       <div class="left-section">
         <div class="title">
-          <h1>Sasuk Phonthong!</h1>
+          <h1>Sasuk !</h1>
           <p>Register to your account!</p>
         </div>
         <div class="form">
@@ -52,8 +52,8 @@
       </div>
       <div class="right-section" style="background-image: url(../img/ris.png); height: 540px; width: 597px;">
         <div class="welcome-text">
-          <h1>Welcome Back</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+          {{-- <h1>Welcome Back</h1> --}}
+          {{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p> --}}
         </div>
       </div>
     </div>

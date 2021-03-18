@@ -165,7 +165,7 @@
 
     // Chart Data
     var chartData = {
-        labels: ["เชียงใหม่", "ลำพูน", "ลำปาง", "แพร่", "น่าน","พะเยา","เชียงราย","แม่ฮ่องสอน"],
+        labels: ["เชียงใหม่", "ลำพูน", "ลำปาง", "แพร่", "น่าน","พะเยา","เชียงราย","แม่ฮ่องสอน","ว่าง"],
         datasets: [{
             label: "ข้าราชการ",
             data: [    
@@ -240,21 +240,21 @@
                 ],
             backgroundColor: "#cbf540",
             borderColor: "transparent"
-        // },
-        // {
-        //     label: "ข้อมูลว่าง",
-        //     data: [    
-        //         [ <?php echo $chaingmaikindnull; ?>],
-        //         [ <?php echo $lamphoonkindnull; ?>],
-        //         [ <?php echo $lampangkindnull; ?>],        
-        //         [ <?php echo $praekindnull; ?>],
-        //         [ <?php echo $nankindnull; ?>],
-        //         [ <?php echo $payouakindnull; ?>],
-        //         [ <?php echo $chaingraykindnull; ?>],
-        //         [ <?php echo $maehongsonkindnull; ?>]
-        //         ],
-        //     backgroundColor: "#c4bf25",
-        //     borderColor: "transparent"
+        },
+        {
+            label: "ข้อมูลว่าง",
+            data: [    
+                [ <?php echo $chaingmaikindnull; ?>],
+                [ <?php echo $lamphoonkindnull; ?>],
+                [ <?php echo $lampangkindnull; ?>],        
+                [ <?php echo $praekindnull; ?>],
+                [ <?php echo $nankindnull; ?>],
+                [ <?php echo $payouakindnull; ?>],
+                [ <?php echo $chaingraykindnull; ?>],
+                [ <?php echo $maehongsonkindnull; ?>]
+                ],
+            backgroundColor: "#c4bf25",
+            borderColor: "transparent"
         }]
     };
 
