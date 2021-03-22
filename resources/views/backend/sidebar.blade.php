@@ -1,6 +1,11 @@
 <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="main-menu-content">
       <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+
+        {{-- <img class="rounded-circle z-depth-2" alt="30x30" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(31).jpg"
+        data-holder-rendered="true" width="60px" height="60px"> --}}
+
+
           <li class=" nav-item"><a href="{{url('backend_dashboard')}}"><i class="la la-tachometer"></i><span class="menu-title" data-i18n="nav.dash.main">Dashboard</span></a></li>
           <li class=" nav-item"><a href="{{url('backend/dashboardperson')}}"><i class="la la-group"></i><span class="menu-title" data-i18n="nav.dash.main">บุคลากร</span></a>
           {{-- <li class=" nav-item"><a href="{{url('backend/dashboard/indexdh')}}"><i class="la la-folder"></i><span class="menu-title" data-i18n="nav.dash.main">Dashboard เขต 1</span></a> --}}

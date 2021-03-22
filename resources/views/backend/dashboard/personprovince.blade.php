@@ -16,61 +16,60 @@
                   </div>
                 </div>
                 <div class="card-content collapse show">
-                  <div class="card-body pt-0">
-                    {{-- @foreach ($hos_persons as $item) --}}
-                    {{-- <p class="pt-1" ><a href="{{ url('backend/person_province_only/'.$hos_persons->HOSPCODE)}}">เชียงใหม่</a>   --}}
-                    
-                      <p class="pt-1">เชียงใหม่
+                  
+                  <div class="card-body pt-0"> 
+                    <p class="pt-1" ><a href="{{ url('backend/person_province_only/'.$hos_per_chiangmais->chwpart)}}">เชียงใหม่</a>  
+                   
                       <span class="float-right">
                         <span class="text-bold-600">{{$chaingmai}}</span> คน</span>
-                    </p>
-                    {{-- @endforeach --}}
+                    </p>                   
                     <div class="progress progress-sm mt-1 mb-0 box-shadow-1">
                       <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 48%" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <p class="pt-1">ลำพูน
+                   
+                    <p class="pt-1"><a href="{{ url('backend/person_province_only/'.$hos_per_lamphoons->chwpart)}}">ลำพูน</a> 
                         <span class="float-right">
                           <span class="text-bold-600">{{$lamphoon}}</span> คน</span>
                       </p>
                       <div class="progress progress-sm mt-1 mb-0 box-shadow-1">
                         <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 48%" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
-                      <p class="pt-1">ลำปาง
+                      <p class="pt-1"><a href="{{ url('backend/person_province_only/'.$hos_per_lampangs->chwpart)}}">ลำปาง</a> 
                         <span class="float-right">
                           <span class="text-bold-600">{{$lampang}}</span> คน</span>
                       </p>
                       <div class="progress progress-sm mt-1 mb-0 box-shadow-1">
                         <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 48%" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
-                      <p class="pt-1">แพร่
+                      <p class="pt-1"><a href="{{ url('backend/person_province_only/'.$hos_per_praes->chwpart)}}">แพร่</a> 
                         <span class="float-right">
                           <span class="text-bold-600">{{$prae}}</span> คน</span>
                       </p>
                       <div class="progress progress-sm mt-1 mb-0 box-shadow-1">
                         <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 48%" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
-                      <p class="pt-1">น่าน
+                      <p class="pt-1"><a href="{{ url('backend/person_province_only/'.$hos_per_nans->chwpart)}}">น่าน</a> 
                         <span class="float-right">
                           <span class="text-bold-600">{{$nan}}</span> คน</span>
                       </p>
                       <div class="progress progress-sm mt-1 mb-0 box-shadow-1">
                         <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 48%" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
-                      <p class="pt-1">พะเยา
+                      <p class="pt-1"><a href="{{ url('backend/person_province_only/'.$hos_per_payouas->chwpart)}}">พะเยา</a> 
                         <span class="float-right">
                           <span class="text-bold-600">{{$payoua}}</span> คน</span>
                       </p>
                       <div class="progress progress-sm mt-1 mb-0 box-shadow-1">
                         <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 48%" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
-                      <p class="pt-1">เชียงราย
+                      <p class="pt-1"><a href="{{ url('backend/person_province_only/'.$hos_per_chaingrays->chwpart)}}">เชียงราย</a> 
                         <span class="float-right">
                           <span class="text-bold-600">{{$chaingray}}</span> คน</span>
                       </p>
                       <div class="progress progress-sm mt-1 mb-0 box-shadow-1">
                         <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 48%" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
-                      <p class="pt-1">แม่ฮ่องสอน
+                      <p class="pt-1"><a href="{{ url('backend/person_province_only/'.$hos_per_maehongsons->chwpart)}}">แม่ฮ่องสอน</a> 
                         <span class="float-right">
                           <span class="text-bold-600">{{$maehongson}}</span> คน</span>
                       </p>

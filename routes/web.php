@@ -27,11 +27,18 @@ Route::get('backend_dashboard',[UserAuthController::class,'backend_dashboard'])-
 // Route::get('backend/dashboard/indexdh',[DashController::class,'indexdh'])->name('dash.indexdh');
 Route::get('backend/dashboardperson',[DashController::class,'dashboardperson'])->name('dash.dashboardperson');
 
-Route::get('backend/person_province_only/{hoscode}',[DashprovinceController::class,'person_province_only'])->name('dash.person_province_only');
+Route::get('backend/person_province_only/{hoscode}',[DashController::class,'personprovinceonly'])->name('dash.personprovinceonly');
 
 
 
 Route::get('backend/config/category',[ConfigController::class,'config_category'])->name('config.category');
 Route::get('backend/config/addcategory',[ConfigController::class,'config_addcategory'])->name('config.addcategory');
 
+// Facebook login
+Route::get('login/facebook', [App\Http\Controllers\LoginController::class, 'redirectToFacebook'])->name('login.facebook');
+Route::get('login/facebook/callback', [App\Http\Controllers\LoginController::class, 'handleFacebookCallback']);
+
+// Google login
+Route::get('login/google', [App\Http\Controllers\LoginController::class, 'redirectToGoogle'])->name('login.google');
+Route::get('login/google/callback', [App\Http\Controllers\LoginController::class, 'handleGoogleCallback']);
 

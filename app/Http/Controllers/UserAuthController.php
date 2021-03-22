@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use Laravel\Socialite\Facades\Socialite;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class UserAuthController extends Controller
 {
@@ -15,6 +19,12 @@ class UserAuthController extends Controller
    function register(){
     return view('auth.register');
     }
+    // function logout(Request $request){
+    //     $request->session()->forget('id');
+    //     $request->session()->forget('name');
+
+    //     return view('auth.login');
+    //     }
     function create(Request $request){
 
         // return $request->input();
@@ -43,23 +53,29 @@ class UserAuthController extends Controller
     }
 
     function check(Request $request){
-        $request->validate([
-            'username'=> 'required',
-            'password'=> 'required|min:5|max:12'
+            $request->validate([
+                'username'=> 'required',
+                'password'=> 'required|min:5|max:12'
 
-        ]);
+            ]);
   
 
-    $user = User::where('username','=', $request->username)->first();
-    if ($user) {
-        if (Hash::check($request->password, $user->password)) {
-            $request->session()->put('LogedUser',$user->id);
-            return redirect('backend_dashboard');
-        }
-    } else {
-       return back()->with('fail','No account');
-    } 
-}
+            $user = User::where('username','=', $request->username)->first();
+            if ($user) {
+                if (Hash::check($request->password, $user->password)) {
+                    $request->session()->put('LogedUser',$user->id);
+                    return redirect('backend_dashboard');
+                }
+            } else {
+            return back()->with('fail','No account');
+            } 
+    }
+
+
+
+
+
+
 
 function backend_dashboard(Request $request)
 {
@@ -79,6 +95,30 @@ function backend_dashboard(Request $request)
     ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
     ->count();
 
+    $hos = DB::table('persons')
+    // ->select("hospcode.hospcode",DB::raw("COUNT(*) as count_hospcode"))
+    ->select("HOSPCODE,COUNT(HOSPCODE)")
+    // ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+    // ->where('hospcode.chwpart','=',50)
+    // ->where('hospcode.chwpart','=',51)
+    // ->where('hospcode.chwpart','=',52)
+    // ->where('hospcode.chwpart','=',54)
+    // ->where('hospcode.chwpart','=',55)
+    // ->where('hospcode.chwpart','=',56)
+    // ->where('hospcode.chwpart','=',57)
+    // ->where('hospcode.chwpart','=',58)
+    ->groupBy("HOSPCODE")
+    ->count();
+
+    // SELECT country,COUNT(*)
+    // FROM author      
+    // GROUP BY country;
+
+    // ->select("users.id", "users.name", DB::raw("COUNT(click.*) as count_click"))
+	//     ->join("click","click.user_id","=","users.id")
+	//     ->groupBy("users.id")
+
+
     $chaingmai = DB::table('persons')
     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
     ->where('hospcode.chwpart','=',50)
@@ -91,10 +131,7 @@ function backend_dashboard(Request $request)
     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
     ->where('hospcode.chwpart','=',52)
     ->count();
-    $lamphoon = DB::table('persons')
-    ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
-    ->where('hospcode.chwpart','=',51)
-    ->count();
+    
     $prae = DB::table('persons')
     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
     ->where('hospcode.chwpart','=',54)
@@ -132,10 +169,7 @@ function backend_dashboard(Request $request)
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->where('hospcode.chwpart','=',52)
     ->count();
-    $As_lamphoon = DB::table('assets')
-    ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
-    ->where('hospcode.chwpart','=',51)
-    ->count();
+   
     $As_prae = DB::table('assets')
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->where('hospcode.chwpart','=',54)
@@ -171,10 +205,7 @@ function backend_dashboard(Request $request)
     ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
     ->where('hospcode.chwpart','=',52)
     ->count();
-    $buil_lamphoon = DB::table('assetbuildings')
-    ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
-    ->where('hospcode.chwpart','=',51)
-    ->count();
+   
     $buil_prae = DB::table('assetbuildings')
     ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
     ->where('hospcode.chwpart','=',54)
@@ -197,6 +228,7 @@ function backend_dashboard(Request $request)
     ->count();
 
     return view('backend/dashboard',[
+        'hos'=>$hos,
         'data'=>$data,'per'=>$per,'assets'=>$assets,'assetbuildings'=>$assetbuildings,
         'chaingmai'=>$chaingmai, 'lampang'=>$lampang, 'lamphoon'=>$lamphoon,'prae'=>$prae,'nan'=>$nan,
         'payoua'=>$payoua, 'chaingray'=>$chaingray,'maehongson'=>$maehongson,

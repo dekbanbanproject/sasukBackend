@@ -18,8 +18,28 @@
                                 <i class="icon-user-follow success font-large-2 float-right"></i>
                             </div>
                         </div>
-                        <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress progress-sm mt-1 mb-0 box-shadow-2">                       
+                              @if($per <= 3000)
+                                <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 10%" aria-valuenow="2999" aria-valuemin="0" aria-valuemax="30000"></div>
+                              @elseif($per <= 6000)
+                                <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 20%" aria-valuenow="5999" aria-valuemin="0" aria-valuemax="30000"></div>
+                              @elseif($per <= 9000)
+                                <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 30%" aria-valuenow="8999" aria-valuemin="0" aria-valuemax="30000"></div>
+                              @elseif($per <= 12000)
+                                <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 40%" aria-valuenow="11999" aria-valuemin="0" aria-valuemax="30000"></div>
+                              @elseif($per <= 15000)
+                                <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 50%" aria-valuenow="14999" aria-valuemin="0" aria-valuemax="30000"></div>
+                              @elseif($per <= 17000)
+                                <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 60%" aria-valuenow="16999" aria-valuemin="0" aria-valuemax="30000"></div>
+                              @elseif($per <= 20000)
+                                <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 70%" aria-valuenow="19999" aria-valuemin="0" aria-valuemax="30000"></div>
+                              @elseif($per <= 23000)
+                                <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 80%" aria-valuenow="22999" aria-valuemin="0" aria-valuemax="30000"></div>
+                              @elseif($per <= 26000)
+                                <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 90%" aria-valuenow="25999" aria-valuemin="0" aria-valuemax="30000"></div>
+                              @else
+                                <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 100%" aria-valuenow="30000" aria-valuemin="0" aria-valuemax="30000"></div>
+                              @endif
                         </div>
                     </div>
                 </div>
@@ -39,8 +59,30 @@
                           </div>
                       </div>
                       <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                          <div class="progress-bar bg-gradient-x-warning" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
+                          {{-- <div class="progress-bar bg-gradient-x-warning" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div> --}}
+                        @if($assets <= 3000)
+                          <div class="progress-bar bg-gradient-x-warning" role="progressbar" style="width: 10%" aria-valuenow="2999" aria-valuemin="0" aria-valuemax="30000"></div>
+                        @elseif($assets <= 6000)
+                          <div class="progress-bar bg-gradient-x-warning" role="progressbar" style="width: 20%" aria-valuenow="5999" aria-valuemin="0" aria-valuemax="30000"></div>
+                        @elseif($assets <= 9000)
+                          <div class="progress-bar bg-gradient-x-warning" role="progressbar" style="width: 30%" aria-valuenow="8999" aria-valuemin="0" aria-valuemax="30000"></div>
+                        @elseif($assets <= 12000)
+                          <div class="progress-bar bg-gradient-x-warning" role="progressbar" style="width: 40%" aria-valuenow="11999" aria-valuemin="0" aria-valuemax="30000"></div>
+                        @elseif($assets <= 15000)
+                          <div class="progress-bar bg-gradient-x-warning" role="progressbar" style="width: 50%" aria-valuenow="14999" aria-valuemin="0" aria-valuemax="30000"></div>
+                        @elseif($assets <= 17000)
+                          <div class="progress-bar bg-gradient-x-warning" role="progressbar" style="width: 60%" aria-valuenow="16999" aria-valuemin="0" aria-valuemax="30000"></div>
+                        @elseif($assets <= 20000)
+                          <div class="progress-bar bg-gradient-x-warning" role="progressbar" style="width: 70%" aria-valuenow="19999" aria-valuemin="0" aria-valuemax="30000"></div>
+                        @elseif($assets <= 23000)
+                          <div class="progress-bar bg-gradient-x-warning" role="progressbar" style="width: 80%" aria-valuenow="22999" aria-valuemin="0" aria-valuemax="30000"></div>
+                        @elseif($assets <= 26000)
+                          <div class="progress-bar bg-gradient-x-warning" role="progressbar" style="width: 90%" aria-valuenow="25999" aria-valuemin="0" aria-valuemax="30000"></div>
+                        @else
+                          <div class="progress-bar bg-gradient-x-warning" role="progressbar" style="width: 100%" aria-valuenow="30000" aria-valuemin="0" aria-valuemax="30000"></div>
+                        @endif
+
+                        </div>
                   </div>
               </div>
           </div>
@@ -58,16 +100,31 @@
                                   <i class="icon-user-follow info font-large-2 float-right"></i>
                               </div>
                           </div>
-                          <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                            @if ($assetbuildings <= 200)
-                              <div class="progress-bar bg-gradient-x-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                            @elseif ($assetbuildings <= 400)
-                              <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div> 
-                              @elseif ($assetbuildings >= 600 )
-                              <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>  
-                            @endif
+                          <div class="progress progress-sm mt-1 mb-0 box-shadow-2">                          
                               {{-- <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div> --}}
-                          </div>
+                              @if($assetbuildings <= 1000)
+                              <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 10%" aria-valuenow="999" aria-valuemin="0" aria-valuemax="10000"></div>
+                            @elseif($assetbuildings <= 2000)
+                              <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 20%" aria-valuenow="1999" aria-valuemin="0" aria-valuemax="10000"></div>
+                            @elseif($assetbuildings <= 3000)
+                              <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 30%" aria-valuenow="2999" aria-valuemin="0" aria-valuemax="10000"></div>
+                            @elseif($assetbuildings <= 4000)
+                              <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 40%" aria-valuenow="3999" aria-valuemin="0" aria-valuemax="10000"></div>
+                            @elseif($assetbuildings <= 5000)
+                              <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 50%" aria-valuenow="4999" aria-valuemin="0" aria-valuemax="10000"></div>
+                            @elseif($assetbuildings <= 6000)
+                              <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 60%" aria-valuenow="5999" aria-valuemin="0" aria-valuemax="10000"></div>
+                            @elseif($assetbuildings <= 7000)
+                              <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 70%" aria-valuenow="6999" aria-valuemin="0" aria-valuemax="10000"></div>
+                            @elseif($assetbuildings <= 8000)
+                              <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 80%" aria-valuenow="7999" aria-valuemin="0" aria-valuemax="10000"></div>
+                            @elseif($assetbuildings <= 9000)
+                              <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 90%" aria-valuenow="8999" aria-valuemin="0" aria-valuemax="10000"></div>
+                            @else
+                              <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 100%" aria-valuenow="10000" aria-valuemin="0" aria-valuemax="10000"></div>
+                            @endif
+                         
+                            </div>
                       </div>
                   </div>
               </div>
@@ -78,8 +135,8 @@
                       <div class="card-body">
                           <div class="media d-flex">
                               <div class="media-body text-left">
-                                  <h3 class="danger">{{$chaingmai}}</h3>
-                                  <h6>Customer</h6>
+                                  <h3 class="danger">{{$hos}}</h3>
+                                  <h6>Hospital</h6>
                               </div>
                               <div>
                                   <i class="icon-user-follow danger font-large-2 float-right"></i>

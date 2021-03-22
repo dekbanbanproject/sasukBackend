@@ -34,6 +34,7 @@ class DashController extends Controller
         $assetbuildings = DB::table('assetbuildings')
             ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
         ->count();
+
         $chaingmai = DB::table('persons')
             ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
             ->where('hospcode.chwpart','=',50)
@@ -46,10 +47,7 @@ class DashController extends Controller
             ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
             ->where('hospcode.chwpart','=',52)
         ->count();
-        $lamphoon = DB::table('persons')
-            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
-            ->where('hospcode.chwpart','=',51)
-        ->count();
+    
         $prae = DB::table('persons')
             ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
             ->where('hospcode.chwpart','=',54)
@@ -352,7 +350,46 @@ class DashController extends Controller
         ->where('persons.HR_PERSON_TYPE_NAME','=',NULL)
     ->count();
 
+        $hos_per_chiangmai = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            ->where('hospcode.chwpart','=',50)
+        ->first();
+        $hos_per_lamphoon = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            ->where('hospcode.chwpart','=',51)
+        ->first();
+        $hos_per_lampang = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            ->where('hospcode.chwpart','=',52)
+        ->first();
+        
+        $hos_per_prae = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            ->where('hospcode.chwpart','=',54)
+        ->first();
+        $hos_per_nan = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            ->where('hospcode.chwpart','=',55)
+        ->first();
+        $hos_per_payoua = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            ->where('hospcode.chwpart','=',56)
+        ->first();
+        $hos_per_chaingray= DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            ->where('hospcode.chwpart','=',57)
+        ->first();
+        $hos_per_maehongson= DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            ->where('hospcode.chwpart','=',58)
+        ->first();
+
         return view('backend/dashboardperson',[
+            'hos_per_chiangmais'=>$hos_per_chiangmai,'hos_per_lampangs'=>$hos_per_lampang,
+            'hos_per_lamphoons'=>$hos_per_lamphoon,'hos_per_praes'=>$hos_per_prae,
+            'hos_per_nans'=>$hos_per_nan,'hos_per_payouas'=>$hos_per_payoua,
+            'hos_per_chaingrays'=>$hos_per_chaingray,'hos_per_maehongsons'=>$hos_per_maehongson,
+
             'data'=>$data,'per'=>$per,'assets'=>$assets,'assetbuildings'=>$assetbuildings,
             'chaingmai'=>$chaingmai, 'lampang'=>$lampang, 'lamphoon'=>$lamphoon,'prae'=>$prae,'nan'=>$nan,
             'payoua'=>$payoua, 'chaingray'=>$chaingray,'maehongson'=>$maehongson,
@@ -377,4 +414,54 @@ class DashController extends Controller
 
         ]);
     }
+    public function personprovinceonly (Request $request)
+    {
+        if (session()->has('LogedUser')) {
+            $data = User::where('id','=',session('LogedUser'))->first();
+            }
+    
+        $chaingmaipgt = DB::table('persons')
+        ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+        ->where('hospcode.chwpart','=',50)
+        ->get();
+        $lamphoonpgt = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            ->where('hospcode.chwpart','=',51)
+        ->get();
+        $lampangpgt = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            ->where('hospcode.chwpart','=',52)
+        ->get();
+        $lamphoonpgt = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            ->where('hospcode.chwpart','=',51)
+        ->get();
+        $praepgt = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            ->where('hospcode.chwpart','=',54)
+        ->get();
+        $nanpgt = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            ->where('hospcode.chwpart','=',55)
+        ->get();
+        $payouapgt = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            ->where('hospcode.chwpart','=',56)
+        ->get();
+        $chaingraypgt = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            ->where('hospcode.chwpart','=',57)
+        ->get();
+        $maehongsonpgt = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            ->where('hospcode.chwpart','=',58)
+        ->get();
+
+        return view('backend/dashboardperson_only',[
+            'data'=>$data,
+            'chaingmaipgt'=>$chaingmaipgt, 'lampangpgt'=>$lampangpgt, 'lamphoonpgt'=>$lamphoonpgt,'praepgt'=>$praepgt,'nanpgt'=>$nanpgt,
+            'payouapgt'=>$payouapgt, 'chaingraypgt'=>$chaingraypgt,'maehongsonpgt'=>$maehongsonpgt, 
+        ]);
+    }
+
 }

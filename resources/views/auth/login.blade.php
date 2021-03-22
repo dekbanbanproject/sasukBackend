@@ -19,16 +19,29 @@
         <div class="form">
             <form class="" action="{{route('auth.check')}}" method="post">
                 @csrf
-            <input type="text" placeholder="Username" name="username" class="form-control">
-            <span class="text-danger">@error('username'){{ $message }} @enderror</span>
+                  <input type="text" placeholder="Username" name="username" class="form-control">
+                  <span class="text-danger">@error('username'){{ $message }} @enderror</span>
 
-            <input type="text" placeholder="Password" name="password" class="form-control">
-            <span class="text-danger">@error('password'){{ $message }} @enderror</span>
+                  <input type="text" placeholder="Password" name="password" class="form-control">
+                  <span class="text-danger">@error('password'){{ $message }} @enderror</span>
 
-            {{-- <span class="floatleft"><input type="checkbox"> Remember me</span> --}}
-            <span class="floatright"><a href="#">Forgot Password?</a></span>
-            <input type="submit" value="Sign In">
-          </form>
+                  {{-- <span class="floatleft"><input type="checkbox"> Remember me</span> --}}
+                  <span class="floatright"><a href="#">Forgot Password?</a></span>
+                  <input type="submit" value="Sign In">
+            </form>
+           
+            <div class="col-sm-12">
+                <a href="{{ route('login.facebook') }}">
+                  <input type="submit" value="Facebook"> 
+                </a>
+            </div>
+
+            <div class="col-sm-12">
+              <a href="{{ route('login.google') }}">
+                <input type="submit" value="Google">  
+              </a>
+          </div>
+      
           <div class="create-account">
             Don,t have an Account? <a href="{{url('register')}}">Create</a>
           </div>
