@@ -19,6 +19,15 @@ class DashController extends Controller
         ]);
     }
 
+    // function dashboardperson(Request $request)
+    // {
+    //     if (session()->has('LogedUser')) {
+    //     $data = User::where('id','=',session('LogedUser'))->first();
+    //     }
+    //     return view('backend/dashboardperson',[
+    //         'hos_per_chiangmais'=>$hos_per_chiangmai,
+    //         ]);
+    //     }
     function dashboardperson(Request $request)
     {
         if (session()->has('LogedUser')) {

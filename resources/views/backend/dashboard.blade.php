@@ -5,6 +5,386 @@
     @include('backend/headerB')
 
 </head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap'); */
+
+    * {
+        box-sizing: border-box;
+    }
+        .progresst_per {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 5;
+            height: 15px;
+            width: <?= $percen ?>;
+        }
+        .progress-per {
+            background: linear-gradient(to left, #79f3b8, #48d493);
+            box-shadow: 0 3px 3px -5px #79f3b8, 0 2px 5px #d6adf1;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+        .progresst_assets {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 5;
+            height: 15px;
+            width: <?= $assetscen ?>;
+        }
+        .progress-assets {
+            background: linear-gradient(to left, #f8cf84, #f72a0f);
+            box-shadow: 0 3px 3px -5px #f8cf84, 0 2px 5px #d6adf1;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+        .progresst_assetbuildings {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 5;
+            height: 15px;
+            width: <?= $assetbuildingscen ?>;
+        }
+        .progress-assetbuildings {
+            background: linear-gradient(to left, #8ed2ff, #118adb);
+            box-shadow: 0 3px 3px -5px #8ed2ff, 0 2px 5px #d6adf1;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+        .progresst_hospital {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 5;
+            height: 15px;
+            width: "102";
+        }
+        .progress-hospital {
+            background: linear-gradient(to left, #f17a7a, #df1313);
+            box-shadow: 0 3px 3px -5px #f17a7a, 0 2px 5px #d6adf1;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+
+
+        .progresst_chaingmai {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 5;
+            height: 15px;
+            width: <?= $As_chaingmaicen ?>;
+        }
+        .progress-chaingmai {
+            background: linear-gradient(to left, #f8cf84, #f72a0f);
+            box-shadow: 0 3px 3px -5px #f8cf84, 0 2px 5px #d6adf1;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+
+        .progresst_lampangss {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 5;
+            height: 15px;
+            width: <?= $As_chaingmaicen ?>;
+        }
+        .progress-lampangss {
+            background: linear-gradient(to left, #f8cf84, #f72a0f);
+            box-shadow: 0 3px 3px -5px #f8cf84, 0 2px 5px #d6adf1;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+
+        .progresst_nans {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 5;
+            height: 15px;
+            width: <?= $As_chaingraycen ?>;
+        }
+        .progress-nans {
+            background: linear-gradient(to left, #f8cf84, #f72a0f);
+            box-shadow: 0 3px 3px -5px #f8cf84, 0 2px 5px #d6adf1;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+        
+        .progresst_chaingrayss {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 5;
+            height: 15px;
+            width: <?= $As_chaingraycen ?>;
+        }
+        .progress-chaingrayss {
+            background: linear-gradient(to left, #f8cf84, #f72a0f);
+            box-shadow: 0 3px 3px -5px #f8cf84, 0 2px 5px #d6adf1;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+
+
+
+
+
+        .progresslamphoon {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 0;
+            height: 15px;
+            width: <?= $buil_lamphoon ?>;
+            /* width: 700px; */
+        }
+        .progress-lamphoon {
+            background: linear-gradient(to left, #F2709C, #FF9472);
+            box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
+            border-radius: 10px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+        .progresst_bc {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 0;
+            height: 15px;
+            width: <?= $buil_chaingmaicen ?>; */
+            /* width: 700px; */
+        } 
+        .progress-bc {
+            background: linear-gradient(to left, #F2709C, #FF9472);
+            box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
+            border-radius: 10px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+        .progresst_lp {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 0;
+            height: 15px;
+            width: <?= $buil_lamphooncen ?>; */
+            /* width: 700px; */
+        } 
+        .progress-lp {
+            background: linear-gradient(to left, #F2709C, #FF9472);
+            box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
+            border-radius: 10px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+        .progresst_lap {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 0;
+            height: 15px;
+            width: <?= $buil_lampangcen ?>; */
+            /* width: 700px; */
+        } 
+        .progress-lap {
+            background: linear-gradient(to left, #F2709C, #FF9472);
+            box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
+            border-radius: 10px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+        .progresst_laprae {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 0;
+            height: 15px;
+            width: <?= $buil_praegcen ?>; */
+            /* width: 700px; */
+        } 
+        .progress-laprae {
+            background: linear-gradient(to left, #F2709C, #FF9472);
+            box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
+            border-radius: 10px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+         .progresst_nan {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 0;
+            height: 15px;
+            width: <?= $buil_nangcen ?>;
+        }
+        .progress-nan {
+            background: linear-gradient(to left, #F2709C, #FF9472);
+            box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+        .progresst_payoa {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 0;
+            height: 15px;
+            width: <?= $buil_payouacen ?>;
+        }
+        .progress-payoa {
+            background: linear-gradient(to left, #F2709C, #FF9472);
+            box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+        .progresst_chaingray {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 0;
+            height: 15px;
+            width: <?= $buil_chaingraycen ?>;
+        }
+        .progress-chaingray {
+            background: linear-gradient(to left, #F2709C, #FF9472);
+            box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+        .progresst_maehongson {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 0;
+            height: 15px;
+            width: <?= $buil_maehongsoncen ?>;
+        }
+        .progress-maehongson {
+            background: linear-gradient(to left, #F2709C, #FF9472);
+            box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+</style>
+
 
 <body class="vertical-layout vertical-compact-menu 2-columns   menu-expanded fixed-navbar" data-open="click" data-menu="vertical-compact-menu" data-col="2-columns">
   
@@ -23,7 +403,7 @@
     @include('backend/footerB')
 
 
-    {{-- <script src="{{ asset('app-assets/js/scripts/charts/chartjs/bar/column.js') }}"></script> --}}
+    <script src="{{ asset('app-assets/js/scripts/charts/chartjs/bar/progress.js') }}"></script>
 
 <script>
     $(window).on("load", function(){
@@ -307,6 +687,8 @@
     var lineChart = new Chart(ctx, config);
     });
 </script>
+
+
 
 </body>
 </html>

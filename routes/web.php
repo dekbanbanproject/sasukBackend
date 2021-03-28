@@ -22,6 +22,7 @@ Route::get('logout',[UserAuthController::class,'logout']);
 Route::post('create',[UserAuthController::class,'create'])->name('auth.create');
 Route::post('check',[UserAuthController::class,'check'])->name('auth.check');
 Route::get('backend_dashboard',[UserAuthController::class,'backend_dashboard'])->name('backend_dashboard');
+Route::get('backend/personcount',[UserAuthController::class,'personcount'])->name('auth.personcount');
 
 
 // Route::get('backend/dashboard/indexdh',[DashController::class,'indexdh'])->name('dash.indexdh');

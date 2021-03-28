@@ -73,7 +73,55 @@ class UserAuthController extends Controller
 
 
 
+    function personcount(Request $request)
+    {
+        if (session()->has('LogedUser')) {
+        $data = User::where('id','=',session('LogedUser'))->first();
+        }
 
+        $resulttotal = DB::table('dc_hospital')->get();
+        $total_poll_row = mysqli_num_rows($resulttotal);
+
+        // $query = $conn->query("SELECT * FROM tblprogramming order by id asc");
+
+
+
+        $As_chaingmai = DB::table('assets')
+        ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
+        ->where('hospcode.chwpart','=',50)
+        ->count();
+
+        $total = 10000;
+        $open = round(($As_chaingmai / $total) * 100);
+          
+        $progress_bar_class = '';
+        if($As_chaingmai >= 40)
+        {
+            $progress_bar_class = 'progress-bar-success';
+        }
+        else if($As_chaingmai >= 25 && $As_chaingmai < 40)
+        {
+            $progress_bar_class = 'progress-bar-info';
+        }
+        else if($As_chaingmai >= 10 && $As_chaingmai < 25)
+        {
+            $progress_bar_class = 'progress-bar-warning';
+        }
+        else
+        {
+            $progress_bar_class = 'progress-bar-danger';
+        }
+
+        $output ='
+       
+        
+        
+        
+        ';
+        echo $output;
+
+      
+    }
 
 
 
@@ -86,14 +134,20 @@ function backend_dashboard(Request $request)
     $per = DB::table('persons')
     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
     ->count();
+    $maxch = 50000;
+    $percen = $per * 100 / $maxch;
 
     $assets = DB::table('assets')
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->count();
+    $maxch = 50000;
+    $assetscen = $assets * 100 / $maxch;
 
     $assetbuildings = DB::table('assetbuildings')
     ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
     ->count();
+    $maxch = 2000;
+    $assetbuildingscen = $assetbuildings * 100 / $maxch;
 
     $hos = DB::table('persons')
     // ->select("hospcode.hospcode",DB::raw("COUNT(*) as count_hospcode"))
@@ -161,6 +215,9 @@ function backend_dashboard(Request $request)
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->where('hospcode.chwpart','=',50)
     ->count();
+    $maxch = 10000;
+    $As_chaingmaicen = $As_chaingmai * 100 / $maxch;
+
     $As_lamphoon = DB::table('assets')
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->where('hospcode.chwpart','=',51)
@@ -169,6 +226,8 @@ function backend_dashboard(Request $request)
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->where('hospcode.chwpart','=',52)
     ->count();
+    $maxch = 10000;
+    $As_lampangcen = $As_lampang * 100 / $maxch;
    
     $As_prae = DB::table('assets')
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
@@ -178,6 +237,9 @@ function backend_dashboard(Request $request)
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->where('hospcode.chwpart','=',55)
     ->count();
+    $maxch = 10000;
+    $As_nancen = $As_nan * 100 / $maxch;
+
     $As_payoua = DB::table('assets')
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->where('hospcode.chwpart','=',56)
@@ -186,6 +248,9 @@ function backend_dashboard(Request $request)
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->where('hospcode.chwpart','=',57)
     ->count();
+    $maxch = 10000;
+    $As_chaingraycen = $As_chaingray * 100 / $maxch;
+
     $As_maehongson= DB::table('assets')
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->where('hospcode.chwpart','=',58)
@@ -197,41 +262,71 @@ function backend_dashboard(Request $request)
     ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
     ->where('hospcode.chwpart','=',50)
     ->count();
+    $maxch = 500;
+    $buil_chaingmaicen = $buil_chaingmai * 100 / $maxch;
+
     $buil_lamphoon = DB::table('assetbuildings')
     ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
     ->where('hospcode.chwpart','=',51)
     ->count();
+    $maxch = 500;
+    $buil_lamphooncen = $buil_lamphoon * 100 / $maxch;
+
     $buil_lampang = DB::table('assetbuildings')
     ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
     ->where('hospcode.chwpart','=',52)
     ->count();
+    $maxch = 500;
+    $buil_lampangcen = $buil_lampang * 100 / $maxch;
    
     $buil_prae = DB::table('assetbuildings')
     ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
     ->where('hospcode.chwpart','=',54)
     ->count();
+    $maxch = 500;
+    $buil_praegcen = $buil_prae * 100 / $maxch;
+
     $buil_nan = DB::table('assetbuildings')
     ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
     ->where('hospcode.chwpart','=',55)
     ->count();
+    $maxch = 500;
+    $buil_nangcen = $buil_nan * 100 / $maxch;
+    
     $buil_payoua = DB::table('assetbuildings')
     ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
     ->where('hospcode.chwpart','=',56)
     ->count();
+    $maxch = 500;
+    $buil_payouacen = $buil_payoua * 100 / $maxch;
+
     $buil_chaingray= DB::table('assetbuildings')
     ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
     ->where('hospcode.chwpart','=',57)
     ->count();
+    $maxch = 500;
+    $buil_chaingraycen = $buil_chaingray * 100 / $maxch;
+
     $buil_maehongson= DB::table('assetbuildings')
     ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
     ->where('hospcode.chwpart','=',58)
     ->count();
+    $maxch = 500;
+    $buil_maehongsoncen = $buil_maehongson * 100 / $maxch;
 
     return view('backend/dashboard',[
-        'hos'=>$hos,
-        'data'=>$data,'per'=>$per,'assets'=>$assets,'assetbuildings'=>$assetbuildings,
+        'assetscen'=>$assetscen,'assetbuildingscen'=>$assetbuildingscen,
+
+        'hos'=>$hos,'buil_chaingmaicen'=>$buil_chaingmaicen,'buil_lamphooncen'=>$buil_lamphooncen,'buil_lampangcen'=>$buil_lampangcen,
+
+        'buil_praegcen'=>$buil_praegcen, 'buil_nangcen'=>$buil_nangcen,'buil_payouacen'=>$buil_payouacen,'buil_chaingraycen'=>$buil_chaingraycen,'buil_maehongsoncen'=>$buil_maehongsoncen,
+
+
+        'data'=>$data,'per'=>$per,'percen'=>$percen,'assets'=>$assets,'assetbuildings'=>$assetbuildings,
         'chaingmai'=>$chaingmai, 'lampang'=>$lampang, 'lamphoon'=>$lamphoon,'prae'=>$prae,'nan'=>$nan,
         'payoua'=>$payoua, 'chaingray'=>$chaingray,'maehongson'=>$maehongson,
+
+        'As_chaingmaicen'=>$As_chaingmaicen, 'As_chaingraycen'=>$As_chaingraycen,'As_nancen'=>$As_nancen,'As_lampangcen'=>$As_lampangcen,
 
         'As_chaingmai'=>$As_chaingmai, 'As_lampang'=>$As_lampang, 'As_lamphoon'=>$As_lamphoon,'As_prae'=>$As_prae,'As_nan'=>$As_nan,
         'As_payoua'=>$As_payoua, 'As_chaingray'=>$As_chaingray,'As_maehongson'=>$As_maehongson,

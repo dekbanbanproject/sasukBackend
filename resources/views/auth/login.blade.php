@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login | sasuk</title>
     <link rel="stylesheet" href="{{ asset('assets/css/dis.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}"> --}}
 
 </head>
 <body>
