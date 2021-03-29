@@ -97,6 +97,176 @@
         }
 
 
+
+        .progresst_perchaungmai {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 5;
+            height: 15px;
+            width: <?= $perchaingmaicen ?>;
+        }
+        .progress-perchaungmai {
+            background: linear-gradient(to left, #79f3b8, #48d493);
+            box-shadow: 0 3px 3px -5px #79f3b8, 0 2px 5px #d6adf1;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+        .progresst_perlamphoon {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 5;
+            height: 15px;
+            width: <?= $perlamphooncen ?>;
+        }
+        .progress-perlamphoon {
+            background: linear-gradient(to left, #79f3b8, #48d493);
+            box-shadow: 0 3px 3px -5px #79f3b8, 0 2px 5px #d6adf1;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+        .progresst_perlampang {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 5;
+            height: 15px;
+            width: <?= $perlampangcen ?>;
+        }
+        .progress-perlampang {
+            background: linear-gradient(to left, #79f3b8, #48d493);
+            box-shadow: 0 3px 3px -5px #79f3b8, 0 2px 5px #d6adf1;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+        .progresst_perprae {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 5;
+            height: 15px;
+            width: <?= $perpraecen ?>;
+        }
+        .progress-perprae {
+            background: linear-gradient(to left, #79f3b8, #48d493);
+            box-shadow: 0 3px 3px -5px #79f3b8, 0 2px 5px #d6adf1;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+        .progresst_pernan {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 5;
+            height: 15px;
+            width: <?= $pernancen ?>;
+        }
+        .progress-pernan {
+            background: linear-gradient(to left, #79f3b8, #48d493);
+            box-shadow: 0 3px 3px -5px #79f3b8, 0 2px 5px #d6adf1;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+        .progresst_perpayoua {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 5;
+            height: 15px;
+            width: <?= $perpayouacen ?>;
+        }
+        .progress-perpayoua {
+            background: linear-gradient(to left, #79f3b8, #48d493);
+            box-shadow: 0 3px 3px -5px #79f3b8, 0 2px 5px #d6adf1;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+        .progresst_perchaingray {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 5;
+            height: 15px;
+            width: <?= $perchaingraycen ?>;
+        }
+        .progress-perchaingray {
+            background: linear-gradient(to left, #79f3b8, #48d493);
+            box-shadow: 0 3px 3px -5px #79f3b8, 0 2px 5px #d6adf1;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+        .progresst_permaehongson {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 5;
+            height: 15px;
+            width: <?= $permaehongsoncen ?>;
+        }
+        .progress-permaehongson {
+            background: linear-gradient(to left, #79f3b8, #48d493);
+            box-shadow: 0 3px 3px -5px #79f3b8, 0 2px 5px #d6adf1;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+
         .progresst_chaingmai {
             background-color: #d8d8d8;
             border-radius: 20px;
@@ -269,22 +439,19 @@
         }
 
 
-
-
-
         .progresslamphoon {
             background-color: #d8d8d8;
             border-radius: 20px;
             position: relative;
-            margin: 15px 0;
+            margin: 15px 5;
             height: 15px;
             width: <?= $buil_lamphoon ?>;
             /* width: 700px; */
         }
         .progress-lamphoon {
-            background: linear-gradient(to left, #F2709C, #FF9472);
-            box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
-            border-radius: 10px;
+            background: linear-gradient(to left, #8ed2ff, #118adb);
+            box-shadow: 0 3px 3px -5px #8ed2ff, 0 2px 5px #d6adf1;
+            border-radius: 20px;
             color: #fff;
             display: flex;
             align-items: center;
@@ -298,15 +465,15 @@
             background-color: #d8d8d8;
             border-radius: 20px;
             position: relative;
-            margin: 15px 0;
+            margin: 15px 5;
             height: 15px;
             width: <?= $buil_chaingmaicen ?>; */
             /* width: 700px; */
         } 
         .progress-bc {
-            background: linear-gradient(to left, #F2709C, #FF9472);
-            box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
-            border-radius: 10px;
+            background: linear-gradient(to left, #8ed2ff, #118adb);
+            box-shadow: 0 3px 3px -5px #8ed2ff, 0 2px 5px #d6adf1;
+            border-radius: 20px;
             color: #fff;
             display: flex;
             align-items: center;
@@ -320,15 +487,15 @@
             background-color: #d8d8d8;
             border-radius: 20px;
             position: relative;
-            margin: 15px 0;
+            margin: 15px 5;
             height: 15px;
             width: <?= $buil_lamphooncen ?>; */
             /* width: 700px; */
         } 
         .progress-lp {
-            background: linear-gradient(to left, #F2709C, #FF9472);
-            box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
-            border-radius: 10px;
+            background: linear-gradient(to left, #8ed2ff, #118adb);
+            box-shadow: 0 3px 3px -5px #8ed2ff, 0 2px 5px #d6adf1;
+            border-radius: 20px;
             color: #fff;
             display: flex;
             align-items: center;
@@ -342,15 +509,15 @@
             background-color: #d8d8d8;
             border-radius: 20px;
             position: relative;
-            margin: 15px 0;
+            margin: 15px 5;
             height: 15px;
             width: <?= $buil_lampangcen ?>; */
             /* width: 700px; */
         } 
         .progress-lap {
-            background: linear-gradient(to left, #F2709C, #FF9472);
-            box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
-            border-radius: 10px;
+            background: linear-gradient(to left, #8ed2ff, #118adb);
+            box-shadow: 0 3px 3px -5px #8ed2ff, 0 2px 5px #d6adf1;
+            border-radius: 20px;
             color: #fff;
             display: flex;
             align-items: center;
@@ -364,15 +531,15 @@
             background-color: #d8d8d8;
             border-radius: 20px;
             position: relative;
-            margin: 15px 0;
+            margin: 15px 5;
             height: 15px;
             width: <?= $buil_praegcen ?>; */
             /* width: 700px; */
         } 
         .progress-laprae {
-            background: linear-gradient(to left, #F2709C, #FF9472);
-            box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
-            border-radius: 10px;
+            background: linear-gradient(to left, #8ed2ff, #118adb);
+            box-shadow: 0 3px 3px -5px #8ed2ff, 0 2px 5px #d6adf1;
+            border-radius: 20px;
             color: #fff;
             display: flex;
             align-items: center;
@@ -386,13 +553,13 @@
             background-color: #d8d8d8;
             border-radius: 20px;
             position: relative;
-            margin: 15px 0;
+            margin: 15px 5;
             height: 15px;
             width: <?= $buil_nangcen ?>;
         }
         .progress-nan {
-            background: linear-gradient(to left, #F2709C, #FF9472);
-            box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
+            background: linear-gradient(to left, #8ed2ff, #118adb);
+            box-shadow: 0 3px 3px -5px #8ed2ff, 0 2px 5px #d6adf1;
             border-radius: 20px;
             color: #fff;
             display: flex;
@@ -407,13 +574,13 @@
             background-color: #d8d8d8;
             border-radius: 20px;
             position: relative;
-            margin: 15px 0;
+            margin: 15px 5;
             height: 15px;
             width: <?= $buil_payouacen ?>;
         }
         .progress-payoa {
-            background: linear-gradient(to left, #F2709C, #FF9472);
-            box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
+            background: linear-gradient(to left, #8ed2ff, #118adb);
+            box-shadow: 0 3px 3px -5px #8ed2ff, 0 2px 5px #d6adf1;
             border-radius: 20px;
             color: #fff;
             display: flex;
@@ -428,13 +595,13 @@
             background-color: #d8d8d8;
             border-radius: 20px;
             position: relative;
-            margin: 15px 0;
+            margin: 15px 5;
             height: 15px;
             width: <?= $buil_chaingraycen ?>;
         }
         .progress-chaingray {
-            background: linear-gradient(to left, #F2709C, #FF9472);
-            box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
+            background: linear-gradient(to left, #8ed2ff, #118adb);
+            box-shadow: 0 3px 3px -5px #8ed2ff, 0 2px 5px #d6adf1;
             border-radius: 20px;
             color: #fff;
             display: flex;
@@ -449,13 +616,13 @@
             background-color: #d8d8d8;
             border-radius: 20px;
             position: relative;
-            margin: 15px 0;
+            margin: 15px 5;
             height: 15px;
             width: <?= $buil_maehongsoncen ?>;
         }
         .progress-maehongson {
-            background: linear-gradient(to left, #F2709C, #FF9472);
-            box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
+            background: linear-gradient(to left, #8ed2ff, #118adb);
+            box-shadow: 0 3px 3px -5px #8ed2ff, 0 2px 5px #d6adf1;
             border-radius: 20px;
             color: #fff;
             display: flex;
@@ -485,8 +652,8 @@
 
     @include('backend/footerB')
 
-
-    <script src="{{ asset('app-assets/js/scripts/charts/chartjs/bar/progress.js') }}"></script>
+    {{-- <script src="{{ asset('app-assets/js/scripts/charts/chartjs/bar/progress.js') }}"></script> --}}
+    <script src="{{ asset('app-assets/js/progress.js') }}"></script>
 
 <script>
     $(window).on("load", function(){
@@ -555,7 +722,7 @@
             [ <?php echo $maehongson; ?>]
                 ],
             backgroundColor: "#28D094",
-            // hoverBackgroundColor: "rgba(246,82,45,.9)",
+            hoverBackgroundColor: "rgba(255, 0, 102)",
             borderColor: "transparent"
         // },
         //  {
@@ -664,7 +831,7 @@
             [ <?php echo $As_maehongson; ?>]
                 ],
             backgroundColor: "#f55015",
-            // hoverBackgroundColor: "rgba(246,82,45,.9)",
+            hoverBackgroundColor: "rgba(0, 191, 202)",
             borderColor: "transparent"
        
         }]
@@ -750,8 +917,8 @@
             [ <?php echo $buil_chaingray; ?>],
             [ <?php echo $buil_maehongson; ?>]
                 ],
-            backgroundColor: "#7696f9",
-            // hoverBackgroundColor: "rgba(246,82,45,.9)",
+            backgroundColor: "#118adb",
+            hoverBackgroundColor: "rgba(246,82,45,.9)",
             borderColor: "transparent"
        
         }]

@@ -177,36 +177,57 @@ function backend_dashboard(Request $request)
     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
     ->where('hospcode.chwpart','=',50)
     ->count();
+    $maxch = 10000;
+    $perchaingmaicen = $chaingmai * 100 / $maxch;
+
     $lamphoon = DB::table('persons')
     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
     ->where('hospcode.chwpart','=',51)
     ->count();
+    $maxch = 10000;
+    $perlamphooncen = $lamphoon * 100 / $maxch;
+
     $lampang = DB::table('persons')
     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
     ->where('hospcode.chwpart','=',52)
     ->count();
+    $maxch = 10000;
+    $perlampangcen = $lampang * 100 / $maxch;
     
     $prae = DB::table('persons')
     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
     ->where('hospcode.chwpart','=',54)
     ->count();
+    $maxch = 10000;
+    $perpraecen = $prae * 100 / $maxch;
+
     $nan = DB::table('persons')
     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
     ->where('hospcode.chwpart','=',55)
     ->count();
+    $maxch = 10000;
+    $pernancen = $nan * 100 / $maxch;
+
     $payoua = DB::table('persons')
     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
     ->where('hospcode.chwpart','=',56)
     ->count();
+    $maxch = 10000;
+    $perpayouacen = $payoua * 100 / $maxch;
+
     $chaingray= DB::table('persons')
     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
     ->where('hospcode.chwpart','=',57)
     ->count();
+    $maxch = 10000;
+    $perchaingraycen = $chaingray * 100 / $maxch;
+
     $maehongson= DB::table('persons')
     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
     ->where('hospcode.chwpart','=',58)
     ->count();
-
+    $maxch = 10000;
+    $permaehongsoncen = $maehongson * 100 / $maxch;
     // $personchw= DB::table('persons')
     // ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
     // ->where('hospcode.chwpart','=',58)
@@ -332,6 +353,12 @@ function backend_dashboard(Request $request)
 
         'buil_praegcen'=>$buil_praegcen, 'buil_nangcen'=>$buil_nangcen,'buil_payouacen'=>$buil_payouacen,'buil_chaingraycen'=>$buil_chaingraycen,'buil_maehongsoncen'=>$buil_maehongsoncen,
       
+
+        
+        'perchaingmaicen'=>$perchaingmaicen, 'perlamphooncen'=>$perlamphooncen, 'perlampangcen'=>$perlampangcen,'perpraecen'=>$perpraecen,'pernancen'=>$pernancen,
+        'perpayouacen'=>$perpayouacen, 'perchaingraycen'=>$perchaingraycen,'permaehongsoncen'=>$permaehongsoncen,
+
+
 
         'data'=>$data,'per'=>$per,'percen'=>$percen,'assets'=>$assets,'assetbuildings'=>$assetbuildings,
         'chaingmai'=>$chaingmai, 'lampang'=>$lampang, 'lamphoon'=>$lamphoon,'prae'=>$prae,'nan'=>$nan,

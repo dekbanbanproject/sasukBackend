@@ -97,7 +97,7 @@
     </div>
 
           <div class="row">
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-4">
               <div class="card">
                 <div class="card-header">
                   <h4 class="card-title">จำนวนบุคลากรแต่ละจังหวัด</h4>
@@ -113,225 +113,73 @@
                     <p class="pt-1">เชียงใหม่
                       {{-- <p class="pt-1"><a href="{{ url('backend/person_province_only/'.$hos_persons->HOSPCODE)}}">เชียงใหม่</a>  --}}
                       <span class="float-right">
-                        <span class="text-bold-600">{{$chaingmai}}</span> คน</span>
+                        <span class="text-bold-600">{{$chaingmai}}</span> /10000</span>
                     </p>
-                    <div class="progress progress-sm mt-1 mb-0 box-shadow-1">                     
-                        @if($chaingmai <= 1000)
-                          <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 10%" aria-valuenow="2999" aria-valuemin="0" aria-valuemax="10000"></div>
-                        @elseif($chaingmai <= 2000)
-                          <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 20%" aria-valuenow="5999" aria-valuemin="0" aria-valuemax="10000"></div>
-                        @elseif($chaingmai <= 3000)
-                          <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 30%" aria-valuenow="8999" aria-valuemin="0" aria-valuemax="10000"></div>
-                        @elseif($chaingmai <= 4000)
-                          <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 40%" aria-valuenow="11999" aria-valuemin="0" aria-valuemax="10000"></div>
-                        @elseif($chaingmai <= 5000)
-                          <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 50%" aria-valuenow="14999" aria-valuemin="0" aria-valuemax="10000"></div>
-                        @elseif($chaingmai <= 6000)
-                          <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 60%" aria-valuenow="16999" aria-valuemin="0" aria-valuemax="10000"></div>
-                        @elseif($chaingmai <= 7000)
-                          <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 70%" aria-valuenow="19999" aria-valuemin="0" aria-valuemax="10000"></div>
-                        @elseif($chaingmai <= 8000)
-                          <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 80%" aria-valuenow="22999" aria-valuemin="0" aria-valuemax="10000"></div>
-                        @elseif($chaingmai <= 9000)
-                          <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 90%" aria-valuenow="25999" aria-valuemin="0" aria-valuemax="10000"></div>
-                        @else
-                          <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 100%" aria-valuenow="10000" aria-valuemin="0" aria-valuemax="10000"></div>
-                        @endif
+                    <div class="progresst_perchaungmai" max="10000">
+                      <div class="progress-perchaungmai progress-sm mt-1 mb-0 box-shadow-2" data-perchaungmai="{{$perchaingmaicen}}">{{$chaingmai}} 
+                      </div> 
                     </div>
                     <p class="pt-1">ลำพูน
                         <span class="float-right">
-                          <span class="text-bold-600">{{$lamphoon}}</span> คน</span>
+                          <span class="text-bold-600">{{$lamphoon}}</span> /10000</span>
                       </p>
-                      <div class="progress progress-sm mt-1 mb-0 box-shadow-1">
-                              @if($lamphoon <= 1000)
-                                <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 10%" aria-valuenow="2999" aria-valuemin="0" aria-valuemax="10000"></div>
-                                @elseif($lamphoon <= 2000)
-                                  <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 20%" aria-valuenow="5999" aria-valuemin="0" aria-valuemax="10000"></div>
-                                @elseif($lamphoon <= 3000)
-                                  <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 30%" aria-valuenow="8999" aria-valuemin="0" aria-valuemax="10000"></div>
-                                @elseif($lamphoon <= 4000)
-                                  <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 40%" aria-valuenow="11999" aria-valuemin="0" aria-valuemax="10000"></div>
-                                @elseif($lamphoon <= 5000)
-                                  <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 50%" aria-valuenow="14999" aria-valuemin="0" aria-valuemax="10000"></div>
-                                @elseif($lamphoon <= 6000)
-                                  <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 60%" aria-valuenow="16999" aria-valuemin="0" aria-valuemax="10000"></div>
-                                @elseif($lamphoon <= 7000)
-                                  <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 70%" aria-valuenow="19999" aria-valuemin="0" aria-valuemax="10000"></div>
-                                @elseif($lamphoon <= 8000)
-                                  <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 80%" aria-valuenow="22999" aria-valuemin="0" aria-valuemax="10000"></div>
-                                @elseif($lamphoon <= 9000)
-                                  <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 90%" aria-valuenow="25999" aria-valuemin="0" aria-valuemax="10000"></div>
-                                @else
-                                  <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 100%" aria-valuenow="10000" aria-valuemin="0" aria-valuemax="10000"></div>
-                              @endif
+                      <div class="progresst_perlamphoon" max="10000">
+                        <div class="progress-perlamphoon progress-sm mt-1 mb-0 box-shadow-2" data-perlamphoon="{{$perlamphooncen}}">{{$lamphoon}} 
+                        </div> 
                       </div>
                       <p class="pt-1">ลำปาง
                         <span class="float-right">
-                          <span class="text-bold-600">{{$lampang}}</span> คน</span>
+                          <span class="text-bold-600">{{$lampang}}</span> /10000</span>
                       </p>
-                      <div class="progress progress-sm mt-1 mb-0 box-shadow-1">
-                            @if($lampang <= 1000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 10%" aria-valuenow="2999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @elseif($lampang <= 2000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 20%" aria-valuenow="5999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @elseif($lampang <= 3000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 30%" aria-valuenow="8999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @elseif($lampang <= 4000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 40%" aria-valuenow="11999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @elseif($lampang <= 5000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 50%" aria-valuenow="14999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @elseif($lampang <= 6000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 60%" aria-valuenow="16999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @elseif($lampang <= 7000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 70%" aria-valuenow="19999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @elseif($lampang <= 8000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 80%" aria-valuenow="22999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @elseif($lampang <= 9000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 90%" aria-valuenow="25999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @else
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 100%" aria-valuenow="10000" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @endif
+                      <div class="progresst_perlampang" max="10000">
+                        <div class="progress-perlampang progress-sm mt-1 mb-0 box-shadow-2" data-perlampang="{{$perlampangcen}}">{{$lampang}} 
+                        </div> 
                       </div>
                       <p class="pt-1">แพร่
                         <span class="float-right">
-                          <span class="text-bold-600">{{$prae}}</span> คน</span>
+                          <span class="text-bold-600">{{$prae}}</span> /10000</span>
                       </p>
-                      <div class="progress progress-sm mt-1 mb-0 box-shadow-1">
-                              @if($prae <= 1000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 10%" aria-valuenow="2999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @elseif($prae <= 2000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 20%" aria-valuenow="5999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @elseif($prae <= 3000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 30%" aria-valuenow="8999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @elseif($prae <= 4000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 40%" aria-valuenow="11999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @elseif($prae <= 5000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 50%" aria-valuenow="14999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @elseif($prae <= 6000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 60%" aria-valuenow="16999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @elseif($prae <= 7000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 70%" aria-valuenow="19999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @elseif($prae <= 8000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 80%" aria-valuenow="22999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @elseif($prae <= 9000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 90%" aria-valuenow="25999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @else
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 100%" aria-valuenow="10000" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @endif
+                      <div class="progresst_perprae" max="10000">
+                        <div class="progress-perprae progress-sm mt-1 mb-0 box-shadow-2" data-perprae="{{$perpraecen}}">{{$prae}} 
+                        </div> 
                       </div>
                       <p class="pt-1">น่าน
                         <span class="float-right">
-                          <span class="text-bold-600">{{$nan}}</span> คน</span>
+                          <span class="text-bold-600">{{$nan}}</span> /10000</span>
                       </p>
-                      <div class="progress progress-sm mt-1 mb-0 box-shadow-1">
-                            @if($nan <= 1000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 10%" aria-valuenow="2999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @elseif($nan <= 2000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 20%" aria-valuenow="5999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @elseif($nan <= 3000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 30%" aria-valuenow="8999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @elseif($nan <= 4000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 40%" aria-valuenow="11999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @elseif($nan <= 5000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 50%" aria-valuenow="14999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @elseif($nan <= 6000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 60%" aria-valuenow="16999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @elseif($nan <= 7000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 70%" aria-valuenow="19999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @elseif($nan <= 8000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 80%" aria-valuenow="22999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @elseif($nan <= 9000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 90%" aria-valuenow="25999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @else
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 100%" aria-valuenow="10000" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @endif
+                      <div class="progresst_pernan" max="10000">
+                        <div class="progress-pernan progress-sm mt-1 mb-0 box-shadow-2" data-pernan="{{$pernancen}}">{{$nan}} 
+                        </div> 
                       </div>
                       <p class="pt-1">พะเยา
                         <span class="float-right">
-                          <span class="text-bold-600">{{$payoua}}</span> คน</span>
+                          <span class="text-bold-600">{{$payoua}}</span> /10000</span>
                       </p>
-                      <div class="progress progress-sm mt-1 mb-0 box-shadow-1">
-                            @if($payoua <= 1000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 10%" aria-valuenow="2999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @elseif($payoua <= 2000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 20%" aria-valuenow="5999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @elseif($payoua <= 3000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 30%" aria-valuenow="8999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @elseif($payoua <= 4000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 40%" aria-valuenow="11999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @elseif($payoua <= 5000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 50%" aria-valuenow="14999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @elseif($payoua <= 6000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 60%" aria-valuenow="16999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @elseif($payoua <= 7000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 70%" aria-valuenow="19999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @elseif($payoua <= 8000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 80%" aria-valuenow="22999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @elseif($payoua <= 9000)
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 90%" aria-valuenow="25999" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @else
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 100%" aria-valuenow="10000" aria-valuemin="0" aria-valuemax="10000"></div>
-                          @endif
+                      <div class="progresst_perpayoua" max="10000">
+                        <div class="progress-perpayoua progress-sm mt-1 mb-0 box-shadow-2" data-perpayoua="{{$perpayouacen}}">{{$payoua}} 
+                        </div> 
                       </div>
                       <p class="pt-1">เชียงราย
                         <span class="float-right">
-                          <span class="text-bold-600">{{$chaingray}}</span> คน</span>
+                          <span class="text-bold-600">{{$chaingray}}</span> /10000</span>
                       </p>
-                      <div class="progress progress-sm mt-1 mb-0 box-shadow-1">
-                              @if($chaingray <= 1000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 10%" aria-valuenow="2999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @elseif($chaingray <= 2000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 20%" aria-valuenow="5999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @elseif($chaingray <= 3000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 30%" aria-valuenow="8999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @elseif($chaingray <= 4000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 40%" aria-valuenow="11999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @elseif($chaingray <= 5000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 50%" aria-valuenow="14999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @elseif($chaingray <= 6000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 60%" aria-valuenow="16999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @elseif($chaingray <= 7000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 70%" aria-valuenow="19999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @elseif($chaingray <= 8000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 80%" aria-valuenow="22999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @elseif($chaingray <= 9000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 90%" aria-valuenow="25999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @else
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 100%" aria-valuenow="10000" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @endif
+                      <div class="progresst_perchaingray" max="10000">
+                        <div class="progress-perchaingray progress-sm mt-1 mb-0 box-shadow-2" data-perchaingray="{{$perchaingraycen}}">{{$chaingray}} 
+                        </div> 
                       </div>
                       <p class="pt-1">แม่ฮ่องสอน
                         <span class="float-right">
-                          <span class="text-bold-600">{{$maehongson}}</span> คน</span>
+                          <span class="text-bold-600">{{$maehongson}}</span> /10000</span>
                       </p>
-                      <div class="progress progress-sm mt-1 mb-0 box-shadow-1">
-                        @if($maehongson <= 1000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 10%" aria-valuenow="2999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @elseif($maehongson <= 2000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 20%" aria-valuenow="5999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @elseif($maehongson <= 3000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 30%" aria-valuenow="8999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @elseif($maehongson <= 4000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 40%" aria-valuenow="11999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @elseif($maehongson <= 5000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 50%" aria-valuenow="14999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @elseif($maehongson <= 6000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 60%" aria-valuenow="16999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @elseif($maehongson <= 7000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 70%" aria-valuenow="19999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @elseif($maehongson <= 8000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 80%" aria-valuenow="22999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @elseif($maehongson <= 9000)
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 90%" aria-valuenow="25999" aria-valuemin="0" aria-valuemax="10000"></div>
-                            @else
-                              <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 100%" aria-valuenow="10000" aria-valuemin="0" aria-valuemax="10000"></div>
-                        @endif
+                      <div class="progresst_permaehongson" max="10000">
+                        <div class="progress-permaehongson progress-sm mt-1 mb-0 box-shadow-2" data-permaehongson="{{$permaehongsoncen}}">{{$maehongson}} 
+                        </div> 
                       </div>
                   </div>
                 </div>
               </div>
             </div>           
-            <div class="col-12 col-md-9">
+            <div class="col-12 col-md-8">
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Person Chart</h4>
@@ -347,7 +195,7 @@
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body">
-                            <canvas id="person-chart" height="420"></canvas>
+                            <canvas id="person-chart" height="480"></canvas>
                         </div>
                     </div>
                 </div>
@@ -355,7 +203,7 @@
           </div>
       
           <div class="row">
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-4">
               <div class="card">
                 <div class="card-header">
                   <h4 class="card-title">จำนวนคุรุภัณฑ์แต่ละจังหวัด</h4>
@@ -441,7 +289,7 @@
               </div>
             </div>
            
-            <div class="col-12 col-md-9">
+            <div class="col-12 col-md-8">
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Assets Chart</h4>
@@ -465,7 +313,7 @@
           </div>
 
           <div class="row">
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-4">
               <div class="card">
                 <div class="card-header">
                   <h4 class="card-title">จำนวนอาคารแต่ละจังหวัด</h4>
@@ -550,7 +398,7 @@
               </div>
             </div>
            
-            <div class="col-12 col-md-9">
+            <div class="col-12 col-md-8">
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Building Chart</h4>
@@ -566,42 +414,12 @@
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body">
-                            <canvas id="building-chart" height="605"></canvas>
+                            <canvas id="building-chart" height="480"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
           </div>
-
-
-{{-- 
-          <div class="row">
-            <div class="col-12 col-md-12">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class="card-title">dddd</h4>
-                  <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
-                  <div class="heading-elements">
-                    <ul class="list-inline mb-0">
-                      <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="card-content">
-                  <div class="card-body">
-                    <div class="progresst"> </div>
-                    <div class="progress-done" data-done="{{$buil_chaingmai}}">{{$buil_chaingmai}} คน</div> 
-                    <br>  
-
-                    <div class="progresslamphoon"> </div>
-                    <div class="progress-lamphoon" data-lamphoon="{{$buil_lamphoon}}">{{$buil_lamphoon}} คน</div>   
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> --}}
-
-
 
 
       </div>
