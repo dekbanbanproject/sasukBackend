@@ -393,7 +393,69 @@ class DashController extends Controller
             ->where('hospcode.chwpart','=',58)
         ->first();
 
+        $chaingmai = DB::table('persons')
+    ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+    ->where('hospcode.chwpart','=',50)
+    ->count();
+    $maxch = 10000;
+    $perchaingmaicen = $chaingmai * 100 / $maxch;
+
+    $lamphoon = DB::table('persons')
+    ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+    ->where('hospcode.chwpart','=',51)
+    ->count();
+    $maxch = 10000;
+    $perlamphooncen = $lamphoon * 100 / $maxch;
+
+    $lampang = DB::table('persons')
+    ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+    ->where('hospcode.chwpart','=',52)
+    ->count();
+    $maxch = 10000;
+    $perlampangcen = $lampang * 100 / $maxch;
+    
+    $prae = DB::table('persons')
+    ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+    ->where('hospcode.chwpart','=',54)
+    ->count();
+    $maxch = 10000;
+    $perpraecen = $prae * 100 / $maxch;
+
+    $nan = DB::table('persons')
+    ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+    ->where('hospcode.chwpart','=',55)
+    ->count();
+    $maxch = 10000;
+    $pernancen = $nan * 100 / $maxch;
+
+    $payoua = DB::table('persons')
+    ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+    ->where('hospcode.chwpart','=',56)
+    ->count();
+    $maxch = 10000;
+    $perpayouacen = $payoua * 100 / $maxch;
+
+    $chaingray= DB::table('persons')
+    ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+    ->where('hospcode.chwpart','=',57)
+    ->count();
+    $maxch = 10000;
+    $perchaingraycen = $chaingray * 100 / $maxch;
+
+    $maehongson= DB::table('persons')
+    ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+    ->where('hospcode.chwpart','=',58)
+    ->count();
+    $maxch = 10000;
+    $permaehongsoncen = $maehongson * 100 / $maxch;
+
         return view('backend/dashboardperson',[
+            
+        'chaingmai'=>$chaingmai, 'lampang'=>$lampang, 'lamphoon'=>$lamphoon,'prae'=>$prae,'nan'=>$nan,
+        'payoua'=>$payoua, 'chaingray'=>$chaingray,'maehongson'=>$maehongson,
+        'perchaingmaicen'=>$perchaingmaicen, 'perlamphooncen'=>$perlamphooncen, 'perlampangcen'=>$perlampangcen,'perpraecen'=>$perpraecen,'pernancen'=>$pernancen,
+        'perpayouacen'=>$perpayouacen, 'perchaingraycen'=>$perchaingraycen,'permaehongsoncen'=>$permaehongsoncen,
+
             'hos_per_chiangmais'=>$hos_per_chiangmai,'hos_per_lampangs'=>$hos_per_lampang,
             'hos_per_lamphoons'=>$hos_per_lamphoon,'hos_per_praes'=>$hos_per_prae,
             'hos_per_nans'=>$hos_per_nan,'hos_per_payouas'=>$hos_per_payoua,
@@ -466,7 +528,68 @@ class DashController extends Controller
             ->where('hospcode.chwpart','=',58)
         ->get();
 
+        $chaingmai = DB::table('persons')
+        ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+        ->where('hospcode.chwpart','=',50)
+        ->count();
+        $maxch = 10000;
+        $perchaingmaicen = $chaingmai * 100 / $maxch;
+    
+        $lamphoon = DB::table('persons')
+        ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+        ->where('hospcode.chwpart','=',51)
+        ->count();
+        $maxch = 10000;
+        $perlamphooncen = $lamphoon * 100 / $maxch;
+    
+        $lampang = DB::table('persons')
+        ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+        ->where('hospcode.chwpart','=',52)
+        ->count();
+        $maxch = 10000;
+        $perlampangcen = $lampang * 100 / $maxch;
+        
+        $prae = DB::table('persons')
+        ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+        ->where('hospcode.chwpart','=',54)
+        ->count();
+        $maxch = 10000;
+        $perpraecen = $prae * 100 / $maxch;
+    
+        $nan = DB::table('persons')
+        ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+        ->where('hospcode.chwpart','=',55)
+        ->count();
+        $maxch = 10000;
+        $pernancen = $nan * 100 / $maxch;
+    
+        $payoua = DB::table('persons')
+        ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+        ->where('hospcode.chwpart','=',56)
+        ->count();
+        $maxch = 10000;
+        $perpayouacen = $payoua * 100 / $maxch;
+    
+        $chaingray= DB::table('persons')
+        ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+        ->where('hospcode.chwpart','=',57)
+        ->count();
+        $maxch = 10000;
+        $perchaingraycen = $chaingray * 100 / $maxch;
+    
+        $maehongson= DB::table('persons')
+        ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+        ->where('hospcode.chwpart','=',58)
+        ->count();
+        $maxch = 10000;
+        $permaehongsoncen = $maehongson * 100 / $maxch;
+
         return view('backend/dashboardperson_only',[
+            'chaingmai'=>$chaingmai, 'lampang'=>$lampang, 'lamphoon'=>$lamphoon,'prae'=>$prae,'nan'=>$nan,
+            'payoua'=>$payoua, 'chaingray'=>$chaingray,'maehongson'=>$maehongson,
+            'perchaingmaicen'=>$perchaingmaicen, 'perlamphooncen'=>$perlamphooncen, 'perlampangcen'=>$perlampangcen,'perpraecen'=>$perpraecen,'pernancen'=>$pernancen,
+            'perpayouacen'=>$perpayouacen, 'perchaingraycen'=>$perchaingraycen,'permaehongsoncen'=>$permaehongsoncen,
+            
             'data'=>$data,
             'chaingmaipgt'=>$chaingmaipgt, 'lampangpgt'=>$lampangpgt, 'lamphoonpgt'=>$lamphoonpgt,'praepgt'=>$praepgt,'nanpgt'=>$nanpgt,
             'payouapgt'=>$payouapgt, 'chaingraypgt'=>$chaingraypgt,'maehongsonpgt'=>$maehongsonpgt, 

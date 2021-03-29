@@ -354,15 +354,14 @@ function backend_dashboard(Request $request)
         'buil_praegcen'=>$buil_praegcen, 'buil_nangcen'=>$buil_nangcen,'buil_payouacen'=>$buil_payouacen,'buil_chaingraycen'=>$buil_chaingraycen,'buil_maehongsoncen'=>$buil_maehongsoncen,
       
 
-        
+        'chaingmai'=>$chaingmai, 'lampang'=>$lampang, 'lamphoon'=>$lamphoon,'prae'=>$prae,'nan'=>$nan,
+        'payoua'=>$payoua, 'chaingray'=>$chaingray,'maehongson'=>$maehongson,
         'perchaingmaicen'=>$perchaingmaicen, 'perlamphooncen'=>$perlamphooncen, 'perlampangcen'=>$perlampangcen,'perpraecen'=>$perpraecen,'pernancen'=>$pernancen,
         'perpayouacen'=>$perpayouacen, 'perchaingraycen'=>$perchaingraycen,'permaehongsoncen'=>$permaehongsoncen,
 
 
 
-        'data'=>$data,'per'=>$per,'percen'=>$percen,'assets'=>$assets,'assetbuildings'=>$assetbuildings,
-        'chaingmai'=>$chaingmai, 'lampang'=>$lampang, 'lamphoon'=>$lamphoon,'prae'=>$prae,'nan'=>$nan,
-        'payoua'=>$payoua, 'chaingray'=>$chaingray,'maehongson'=>$maehongson,
+        'data'=>$data,'per'=>$per,'percen'=>$percen,'assets'=>$assets,'assetbuildings'=>$assetbuildings,        
 
         'As_chaingmaicen'=>$As_chaingmaicen, 'As_chaingraycen'=>$As_chaingraycen,'As_nancen'=>$As_nancen,'As_lampangcen'=>$As_lampangcen,
         'As_lamphooncen'=>$As_lamphooncen,'As_praecen'=>$As_praecen,'As_payouacen'=>$As_payouacen,'As_maehongsoncen'=>$As_maehongsoncen,

@@ -111,7 +111,6 @@
                 <div class="card-content collapse show">
                   <div class="card-body pt-0">
                     <p class="pt-1">เชียงใหม่
-                      {{-- <p class="pt-1"><a href="{{ url('backend/person_province_only/'.$hos_persons->HOSPCODE)}}">เชียงใหม่</a>  --}}
                       <span class="float-right">
                         <span class="text-bold-600">{{$chaingmai}}</span> /10000</span>
                     </p>
@@ -195,7 +194,7 @@
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body">
-                            <canvas id="person-chart" height="480"></canvas>
+                            <canvas id="person-chart" height="530"></canvas>
                         </div>
                     </div>
                 </div>
