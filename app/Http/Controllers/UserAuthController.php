@@ -222,6 +222,9 @@ function backend_dashboard(Request $request)
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->where('hospcode.chwpart','=',51)
     ->count();
+    $maxch = 10000;
+    $As_lamphooncen = $As_lamphoon * 100 / $maxch;
+
     $As_lampang = DB::table('assets')
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->where('hospcode.chwpart','=',52)
@@ -233,6 +236,9 @@ function backend_dashboard(Request $request)
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->where('hospcode.chwpart','=',54)
     ->count();
+    $maxch = 10000;
+    $As_praecen = $As_prae * 100 / $maxch;
+
     $As_nan = DB::table('assets')
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->where('hospcode.chwpart','=',55)
@@ -244,6 +250,9 @@ function backend_dashboard(Request $request)
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->where('hospcode.chwpart','=',56)
     ->count();
+    $maxch = 10000;
+    $As_payouacen = $As_payoua * 100 / $maxch;
+
     $As_chaingray= DB::table('assets')
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->where('hospcode.chwpart','=',57)
@@ -255,6 +264,8 @@ function backend_dashboard(Request $request)
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->where('hospcode.chwpart','=',58)
     ->count();
+    $maxch = 10000;
+    $As_maehongsoncen = $As_maehongson * 100 / $maxch;
 
     ////////////////////////////////////////////////////////////////
     
@@ -320,13 +331,14 @@ function backend_dashboard(Request $request)
         'hos'=>$hos,'buil_chaingmaicen'=>$buil_chaingmaicen,'buil_lamphooncen'=>$buil_lamphooncen,'buil_lampangcen'=>$buil_lampangcen,
 
         'buil_praegcen'=>$buil_praegcen, 'buil_nangcen'=>$buil_nangcen,'buil_payouacen'=>$buil_payouacen,'buil_chaingraycen'=>$buil_chaingraycen,'buil_maehongsoncen'=>$buil_maehongsoncen,
-
+      
 
         'data'=>$data,'per'=>$per,'percen'=>$percen,'assets'=>$assets,'assetbuildings'=>$assetbuildings,
         'chaingmai'=>$chaingmai, 'lampang'=>$lampang, 'lamphoon'=>$lamphoon,'prae'=>$prae,'nan'=>$nan,
         'payoua'=>$payoua, 'chaingray'=>$chaingray,'maehongson'=>$maehongson,
 
         'As_chaingmaicen'=>$As_chaingmaicen, 'As_chaingraycen'=>$As_chaingraycen,'As_nancen'=>$As_nancen,'As_lampangcen'=>$As_lampangcen,
+        'As_lamphooncen'=>$As_lamphooncen,'As_praecen'=>$As_praecen,'As_payouacen'=>$As_payouacen,'As_maehongsoncen'=>$As_maehongsoncen,
 
         'As_chaingmai'=>$As_chaingmai, 'As_lampang'=>$As_lampang, 'As_lamphoon'=>$As_lamphoon,'As_prae'=>$As_prae,'As_nan'=>$As_nan,
         'As_payoua'=>$As_payoua, 'As_chaingray'=>$As_chaingray,'As_maehongson'=>$As_maehongson,

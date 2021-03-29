@@ -33,14 +33,29 @@ $(window).on("load", function(){
     progresst_chaingmai.style.width = progresst_chaingmai.getAttribute('data-chaingmai') + '%';
     progresst_chaingmai.style.opacity = 1;
 
+    const progresst_lampoonas = document.querySelector('.progress-lampoonas');
+    progresst_lampoonas.style.width = progresst_lampoonas.getAttribute('data-lampoonas') + '%';
+    progresst_lampoonas.style.opacity = 1;
+
     const progresst_lampangss = document.querySelector('.progress-lampangss');
     progresst_lampangss.style.width = progresst_lampangss.getAttribute('data-lampangss') + '%';
     progresst_lampangss.style.opacity = 1;
+
+    const progresst_praeas = document.querySelector('.progress-praeas');
+    progresst_praeas.style.width = progresst_praeas.getAttribute('data-praeas') + '%';
+    progresst_praeas.style.opacity = 1;
 
     const progresst_nans = document.querySelector('.progress-nans');
     progresst_nans.style.width = progresst_nans.getAttribute('data-nans') + '%';
     progresst_nans.style.opacity = 1;
 
+    const progresst_payouaas = document.querySelector('.progress-payouaas');
+    progresst_payouaas.style.width = progresst_payouaas.getAttribute('data-payouaas') + '%';
+    progresst_payouaas.style.opacity = 1;
+
+    const progresst_maehongsonas = document.querySelector('.progress-maehongsonas');
+    progresst_maehongsonas.style.width = progresst_maehongsonas.getAttribute('data-maehongsonas') + '%';
+    progresst_maehongsonas.style.opacity = 1;
 
     const progresst_chaingrayss = document.querySelector('.progress-chaingrayss');
     progresst_chaingrayss.style.width = progresst_chaingrayss.getAttribute('data-chaingrayss') + '%';

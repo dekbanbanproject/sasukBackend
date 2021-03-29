@@ -118,7 +118,90 @@
             opacity: 0;
             transition: 1s ease 0.3s;
         }
-
+        .progresst_lampoonas {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 5;
+            height: 15px;
+            width: <?= $As_lamphooncen ?>;
+        }
+        .progress-lampoonas {
+            background: linear-gradient(to left, #f8cf84, #f72a0f);
+            box-shadow: 0 3px 3px -5px #f8cf84, 0 2px 5px #d6adf1;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+        .progresst_praeas {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 5;
+            height: 15px;
+            width: <?= $As_praecen ?>;
+        }
+        .progress-praeas {
+            background: linear-gradient(to left, #f8cf84, #f72a0f);
+            box-shadow: 0 3px 3px -5px #f8cf84, 0 2px 5px #d6adf1;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+        .progresst_payouaas {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 5;
+            height: 15px;
+            width: <?= $As_payouacen ?>;
+        }
+        .progress-payouaas {
+            background: linear-gradient(to left, #f8cf84, #f72a0f);
+            box-shadow: 0 3px 3px -5px #f8cf84, 0 2px 5px #d6adf1;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
+        .progresst_maehongsonas {
+            background-color: #d8d8d8;
+            border-radius: 20px;
+            position: relative;
+            margin: 15px 5;
+            height: 15px;
+            width: <?= $As_maehongsoncen ?>;
+        }
+        .progress-maehongsonas {
+            background: linear-gradient(to left, #f8cf84, #f72a0f);
+            box-shadow: 0 3px 3px -5px #f8cf84, 0 2px 5px #d6adf1;
+            border-radius: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 0;
+            opacity: 0;
+            transition: 1s ease 0.3s;
+        }
         .progresst_lampangss {
             background-color: #d8d8d8;
             border-radius: 20px;
