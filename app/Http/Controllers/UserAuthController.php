@@ -236,56 +236,56 @@ function backend_dashboard(Request $request)
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->where('hospcode.chwpart','=',50)
     ->count();
-    $maxch = 10000;
+    $maxch = 20000;
     $As_chaingmaicen = $As_chaingmai * 100 / $maxch;
 
     $As_lamphoon = DB::table('assets')
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->where('hospcode.chwpart','=',51)
     ->count();
-    $maxch = 10000;
+    $maxch = 20000;
     $As_lamphooncen = $As_lamphoon * 100 / $maxch;
 
     $As_lampang = DB::table('assets')
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->where('hospcode.chwpart','=',52)
     ->count();
-    $maxch = 10000;
+    $maxch = 20000;
     $As_lampangcen = $As_lampang * 100 / $maxch;
    
     $As_prae = DB::table('assets')
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->where('hospcode.chwpart','=',54)
     ->count();
-    $maxch = 10000;
+    $maxch = 20000;
     $As_praecen = $As_prae * 100 / $maxch;
 
     $As_nan = DB::table('assets')
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->where('hospcode.chwpart','=',55)
     ->count();
-    $maxch = 10000;
+    $maxch = 20000;
     $As_nancen = $As_nan * 100 / $maxch;
 
     $As_payoua = DB::table('assets')
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->where('hospcode.chwpart','=',56)
     ->count();
-    $maxch = 10000;
+    $maxch = 20000;
     $As_payouacen = $As_payoua * 100 / $maxch;
 
     $As_chaingray= DB::table('assets')
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->where('hospcode.chwpart','=',57)
     ->count();
-    $maxch = 10000;
+    $maxch = 20000;
     $As_chaingraycen = $As_chaingray * 100 / $maxch;
 
     $As_maehongson= DB::table('assets')
     ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
     ->where('hospcode.chwpart','=',58)
     ->count();
-    $maxch = 10000;
+    $maxch = 20000;
     $As_maehongsoncen = $As_maehongson * 100 / $maxch;
 
     ////////////////////////////////////////////////////////////////

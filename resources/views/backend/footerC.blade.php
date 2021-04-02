@@ -6,7 +6,18 @@
     </p>
   </footer>
 
+
   <script src="{{ asset('app-assets/vendors/js/vendors.min.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('app-assets/vendors/js/tables/datatable/datatables.min.js') }}"></script>
+  <script src="{{ asset('app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js') }}"></script>
+  <script src="{{ asset('app-assets/vendors/js/tables/buttons.colVis.min.js') }}"></script>
+  <script src="{{ asset('app-assets/vendors/js/tables/datatable/dataTables.colReorder.min.js') }}"></script>
+  <script src="{{ asset('app-assets/vendors/js/tables/datatable/dataTables.buttons.min.js') }}"></script>
+  <script src="{{ asset('app-assets/vendors/js/tables/datatable/buttons.bootstrap4.min.js') }}"></script>
+  <script src="{{ asset('app-assets/vendors/js/tables/datatable/dataTables.fixedHeader.min.js') }}"></script>
+
+
+
   <script src="{{ asset('app-assets/vendors/js/charts/chart.min.js') }}" type="text/javascript"></script>
   <script src="{{ asset('app-assets/vendors/js/charts/raphael-min.js') }}" type="text/javascript"></script>
   <script src="{{ asset('app-assets/vendors/js/charts/morris.min.js') }}" type="text/javascript"></script>
@@ -19,3 +30,8 @@
   <script src="{{ asset('app-assets/js/core/app.js') }}" type="text/javascript"></script>
   <script src="{{ asset('app-assets/js/scripts/customizer.js') }}" type="text/javascript"></script>
   <script src="{{ asset('app-assets/js/scripts/pages/dashboard-sales.js') }}" type="text/javascript"></script>
+  <!-- BEGIN: Page JS-->
+  <script src="{{ asset('app-assets/js/scripts/tables/datatables-extensions/datatable-responsive.js') }}"></script>
+  <!-- END: Page JS-->
+
+ 

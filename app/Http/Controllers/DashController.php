@@ -485,12 +485,203 @@ class DashController extends Controller
 
         ]);
     }
-    public function personprovinceonly (Request $request)
+
+    public static function checkhoscode($id)
+    {
+         $checkhoscode =  DB::table('persons')->where('HOSPCODE','=',$id) ->count();                       
+         return $checkhoscode;
+    }
+    public static function pertypeA($id)
+    {
+         $pertypeA =  DB::table('persons')->where('HOSPCODE','=',$id)->where('HR_PERSON_TYPE_ID','=',1)->count();                       
+         return $pertypeA;
+    }
+    public static function pertypeB($id)
+    {
+         $pertypeB =  DB::table('persons')->where('HOSPCODE','=',$id)->where('HR_PERSON_TYPE_ID','=',2)->count();                       
+         return $pertypeB;
+    }
+    public static function pertypeC($id)
+    {
+         $pertypeC =  DB::table('persons')->where('HOSPCODE','=',$id)->where('HR_PERSON_TYPE_ID','=',3)->count();                       
+         return $pertypeC;
+    }
+    public static function pertypeD($id)
+    {
+         $pertypeD =  DB::table('persons')->where('HOSPCODE','=',$id)->where('HR_PERSON_TYPE_ID','=',4)->count();                       
+         return $pertypeD;
+    }
+    public static function pertypeE($id)
+    {
+         $pertypeE =  DB::table('persons')->where('HOSPCODE','=',$id)->where('HR_PERSON_TYPE_ID','=',5)->count();                       
+         return $pertypeE;
+    }
+    public static function pertypeF($id)
+    {
+         $pertypeF =  DB::table('persons')->where('HOSPCODE','=',$id)->where('HR_PERSON_TYPE_ID','=',6)->count();                       
+         return $pertypeF;
+    }
+    public static function pertypeH($id)
+    {
+         $pertypeH =  DB::table('persons')->where('HOSPCODE','=',$id)->where('HR_PERSON_TYPE_ID','>',6)->count();                       
+         return $pertypeH;
+    }
+    public static function pertypeG($id)
+    {
+         $pertypeG =  DB::table('persons')->where('HOSPCODE','=',$id)->where('HR_PERSON_TYPE_ID','=',NULL)->count();                       
+         return $pertypeG;
+    }
+    public static function checkpro($id)
+    {
+        $chw = DB::table('hospcode')->first();
+
+         $checkpro =  DB::table('persons')
+                            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+                            ->where('persons.HOSPCODE','=',$id)
+                            ->where('persons.hospcode','=',$chw->hospcode)
+                            ->count();                       
+         return $checkpro;
+    }
+
+    public static function positionA($id)
+    {
+         $positionA =  DB::table('persons')->where('HOSPCODE','=',$id)->where('HR_POSITION_ID','=',24)->count();                       
+         return $positionA;
+    }
+    public static function positionB($id)
+    {
+         $positionB =  DB::table('persons')->where('HOSPCODE','=',$id)->where('HR_POSITION_ID','=',21)->count();                       
+         return $positionB;
+    }
+    public static function positionC($id)
+    {
+         $positionC =  DB::table('persons')->where('HOSPCODE','=',$id)->where('HR_POSITION_ID','=',23)->count();                       
+         return $positionC;
+    }
+    public static function positionD($id)
+    {
+         $positionD =  DB::table('persons')->where('HOSPCODE','=',$id)->where('HR_POSITION_ID','=',7)->count();                       
+         return $positionD;
+    }
+    public static function positionE($id)
+    {
+         $positionE =  DB::table('persons')->where('HOSPCODE','=',$id)->where('HR_POSITION_ID','=',30)->count();                       
+         return $positionE;
+    }
+    public static function positionF($id)
+    {
+         $positionF =  DB::table('persons')->where('HOSPCODE','=',$id)->where('HR_POSITION_ID','=',3)->count();                       
+         return $positionF;
+    }
+    public static function positionG($id)
+    {
+         $positionG =  DB::table('persons')->where('HOSPCODE','=',$id)->where('HR_POSITION_ID','=',26)->count();                       
+         return $positionG;
+    }
+    public static function positionH($id)
+    {
+         $positionH =  DB::table('persons')->where('HOSPCODE','=',$id)->where('HR_POSITION_ID','=',NULL)->count();                       
+         return $positionH;
+    }
+    // public static function positionI($id)
+    // {
+    //      $positionI =  DB::table('persons')->where('HOSPCODE','=',$id)->where('HR_POSITION_ID','=',21)->count();                       
+    //      return $positionI;
+    // }
+    // public static function positionJ($id)
+    // {
+    //      $positionJ =  DB::table('persons')->where('HOSPCODE','=',$id)->where('HR_POSITION_ID','=',21)->count();                       
+    //      return $positionJ;
+    // }
+
+
+
+    public function personprovinceonly (Request $request,$provincecode)
     {
         if (session()->has('LogedUser')) {
             $data = User::where('id','=',session('LogedUser'))->first();
             }
-    
+
+            $hos_per_province = DB::table('persons')
+                ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+                ->where('hospcode.chwpart','=',$provincecode)
+            ->first();
+       
+            $hos_province = DB::table('persons')
+            ->select('hospcode.chwpart','persons.HOSPCODE','persons.HOS_NAME','hospcode.province_name')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            ->where('hospcode.chwpart','=',$provincecode)
+            ->groupBy('hospcode.chwpart','persons.HOSPCODE','persons.HOS_NAME','hospcode.province_name')
+            ->get();
+
+            $hoscode_count = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            ->where('hospcode.chwpart','=',$provincecode)
+            // ->groupBy('persons.HOSPCODE')
+            // ->count('persons.HOSPCODE');
+            ->count('hospcode.hospcode');
+            // ->sum('hospcode.hospcode');
+            // ->first();
+
+            $hos_provincecount = DB::table('persons')
+                ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+                ->where('hospcode.chwpart','=',$provincecode)
+                // ->where('persons.HOSPCODE','=',$hos_province->HOSPCODE)
+                ->groupBy('persons.HOSPCODE')
+                ->count();
+
+                // $hos_province2 = DB::table('persons')
+                // ->select('hospcode.chwpart','persons.HOSPCODE','persons.HOS_NAME','hospcode.province_name')
+                // ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+                // ->where('hospcode.chwpart','=',$provincecode)
+                // ->groupBy('hospcode.chwpart','persons.HOSPCODE','persons.HOS_NAME','hospcode.province_name')
+                // ->get();
+
+            // foreach ($hos_province2 as $hos){
+            //     $hos_province3 = DB::table('persons')
+            //     ->select('hospcode.chwpart','persons.HOSPCODE','persons.HOS_NAME','hospcode.province_name')
+            //     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            //     ->where('hospcode.chwpart','=',$provincecode)
+            //     ->groupBy('hospcode.chwpart','persons.HOSPCODE','persons.HOS_NAME','hospcode.province_name')
+            //     ->first();
+
+            //     $countcheck  =  DB::table('persons')->where('HOSPCODE','=',$hos->HOSPCODE)->count();
+
+            // }
+           
+
+            // $hos_per_lamphoon = DB::table('persons')
+            //     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            //     ->where('hospcode.chwpart','=',51)
+            // ->first();
+            // $hos_per_lampang = DB::table('persons')
+            //     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            //     ->where('hospcode.chwpart','=',52)
+            // ->first();
+            
+            // $hos_per_prae = DB::table('persons')
+            //     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            //     ->where('hospcode.chwpart','=',54)
+            // ->first();
+            // $hos_per_nan = DB::table('persons')
+            //     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            //     ->where('hospcode.chwpart','=',55)
+            // ->first();
+            // $hos_per_payoua = DB::table('persons')
+            //     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            //     ->where('hospcode.chwpart','=',56)
+            // ->first();
+            // $hos_per_chaingray= DB::table('persons')
+            //     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            //     ->where('hospcode.chwpart','=',57)
+            // ->first();
+            // $hos_per_maehongson= DB::table('persons')
+            //     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+            //     ->where('hospcode.chwpart','=',58)
+            // ->first();
+
+            /////////////////////////////////////////////
+
         $chaingmaipgt = DB::table('persons')
         ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
         ->where('hospcode.chwpart','=',50)
@@ -585,6 +776,10 @@ class DashController extends Controller
         $permaehongsoncen = $maehongson * 100 / $maxch;
 
         return view('backend/dashboardperson_only',[
+
+            'hos_per_province'=>$hos_per_province,'hos_province'=>$hos_province,'hos_provincecount'=>$hos_provincecount,'hoscode_count'=>$hoscode_count,
+            // 'countcheck'=>$countcheck,
+
             'chaingmai'=>$chaingmai, 'lampang'=>$lampang, 'lamphoon'=>$lamphoon,'prae'=>$prae,'nan'=>$nan,
             'payoua'=>$payoua, 'chaingray'=>$chaingray,'maehongson'=>$maehongson,
             'perchaingmaicen'=>$perchaingmaicen, 'perlamphooncen'=>$perlamphooncen, 'perlampangcen'=>$perlampangcen,'perpraecen'=>$perpraecen,'pernancen'=>$pernancen,

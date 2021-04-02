@@ -194,7 +194,7 @@
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body">
-                            <canvas id="person-chart" height="530"></canvas>
+                            <canvas id="person-chart" height="385"></canvas>
                         </div>
                     </div>
                 </div>
@@ -217,7 +217,7 @@
                   <div class="card-body pt-0">
                     <p class="pt-1">เชียงใหม่
                       <span class="float-right">
-                        <span class="text-bold-600">{{$As_chaingmai}}</span> /10000</span>
+                        <span class="text-bold-600">{{$As_chaingmai}}</span> /20000</span>
                     </p>
                     <div class="progresst_chaingmai" max="10000">
                       <div class="progress-chaingmai progress-sm mt-1 mb-0 box-shadow-2" data-chaingmai="{{$As_chaingmaicen}}">{{$As_chaingmai}} 
@@ -225,7 +225,7 @@
                     </div>
                     <p class="pt-1">ลำพูน
                         <span class="float-right">
-                          <span class="text-bold-600">{{$As_lamphoon}}</span> /10000</span>
+                          <span class="text-bold-600">{{$As_lamphoon}}</span> /20000</span>
                       </p>
                       <div class="progresst_lampoonas" max="10000">
                         <div class="progress-lampoonas progress-sm mt-1 mb-0 box-shadow-2" data-lampoonas="{{$As_lamphooncen}}">{{$As_lamphoon}} 
@@ -233,7 +233,7 @@
                       </div>
                       <p class="pt-1">ลำปาง
                         <span class="float-right">
-                          <span class="text-bold-600">{{$As_lampang}} </span>  /10000</span>
+                          <span class="text-bold-600">{{$As_lampang}} </span>  /20000</span>
                       </p>
                       <div class="progresst_lampangss" max="10000">
                         <div class="progress-lampangss progress-sm mt-1 mb-0 box-shadow-2" data-lampangss="{{$As_lampangcen}}">{{$As_lampang}} 
@@ -241,7 +241,7 @@
                       </div>
                       <p class="pt-1">แพร่
                         <span class="float-right">
-                          <span class="text-bold-600">{{$As_prae}} </span>  /10000</span>
+                          <span class="text-bold-600">{{$As_prae}} </span>  /20000</span>
                       </p>
                       <div class="progresst_praeas" max="10000">
                         <div class="progress-praeas progress-sm mt-1 mb-0 box-shadow-2" data-praeas="{{$As_praecen}}">{{$As_prae}} 
@@ -250,7 +250,7 @@
                      
                       <p class="pt-1">น่าน
                         <span class="float-right">
-                          <span class="text-bold-600">{{$As_nan}} </span>  /10000</span>
+                          <span class="text-bold-600">{{$As_nan}} </span>  /20000</span>
                       </p>
                       <div class="progresst_nans" max="10000">
                         <div class="progress-nans progress-sm mt-1 mb-0 box-shadow-2" data-nans="{{$As_nancen}}">{{$As_nan}} 
@@ -258,7 +258,7 @@
                       </div>
                       <p class="pt-1">พะเยา
                         <span class="float-right">
-                          <span class="text-bold-600">{{$As_payoua}} </span>  /10000</span>
+                          <span class="text-bold-600">{{$As_payoua}} </span>  /20000</span>
                       </p>
                       <div class="progresst_payouaas" max="10000">
                         <div class="progress-payouaas progress-sm mt-1 mb-0 box-shadow-2" data-payouaas="{{$As_payouacen}}">{{$As_payoua}} 
@@ -266,7 +266,7 @@
                       </div>
                       <p class="pt-1">เชียงราย
                         <span class="float-right">
-                          <span class="text-bold-600">{{$As_chaingray}} </span>  /10000</span>
+                          <span class="text-bold-600">{{$As_chaingray}} </span>  /20000</span>
                       </p>
                       <div class="progresst_chaingrayss" max="10000">
                         <div class="progress-chaingrayss progress-sm mt-1 mb-0 box-shadow-2" data-chaingrayss="{{$As_chaingraycen}}">{{$As_chaingray}} 
@@ -275,7 +275,7 @@
                      
                       <p class="pt-1">แม่ฮ่องสอน
                         <span class="float-right">
-                          <span class="text-bold-600">{{$As_maehongson}} </span>  /10000</span>
+                          <span class="text-bold-600">{{$As_maehongson}} </span>  /20000</span>
                       </p>
                       <div class="progresst_maehongsonas" max="10000">
                         <div class="progress-maehongsonas progress-sm mt-1 mb-0 box-shadow-2" data-maehongsonas="{{$As_maehongsoncen}}">{{$As_maehongson}} 

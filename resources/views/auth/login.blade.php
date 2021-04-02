@@ -29,7 +29,7 @@
                   <input type="submit" value="Sign In">
             </form>
            
-            <div class="col-sm-12">
+            {{-- <div class="col-sm-12">
                 <a href="{{ route('login.facebook') }}">
                   <input type="submit" value="Facebook"> 
                 </a>
@@ -39,14 +39,15 @@
               <a href="{{ route('login.google') }}">
                 <input type="submit" value="Google">  
               </a>
-          </div>
+          </div> --}}
       
           <div class="create-account">
             Don,t have an Account? <a href="{{url('register')}}">Create</a>
           </div>
         </div>
       </div>
-      <div class="right-section" style="background-image: url(../img/log.png); height: 540px; width: 597px;">
+      {{-- <div class="right-section" style="background-image: url(../img/log.png); height: 540px; width: 597px;"> --}}
+        <div class="right-section" style="background-image: url('{{ asset('img/log.jpg') }}" width="597px;" height="540px;">
         <div class="welcome-text">
           {{-- <h1>Welcome Back</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p> --}}

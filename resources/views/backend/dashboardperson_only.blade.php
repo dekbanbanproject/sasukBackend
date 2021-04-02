@@ -193,14 +193,45 @@
     @include('backend/sidebar')
  
 
-    @include('backend/dashboardperson_only/person_province')
-    {{-- @include('backend/dashboard/person_province') --}}
+    @include('backend/dashboard/contentperson_province')
  
 
     @include('backend/footerC')
 
-
-    <script src="{{ asset('app-assets/js/progress2.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable( {
+                responsive: true
+            } );
+         });
+     </script>
+     <script type="text/javascript">
+        $(function () {
+         
+          var table = $('.data-table').DataTable({
+              processing: true,
+              serverSide: true,
+              ajax: {
+                url: "{{ url('backend/dashboardperson_only/{provincecode}') }}",
+                data: function (d) {
+                      d.email = $('.searchName').val(),
+                      d.search = $('input[type="search"]').val()
+                  }
+              },
+              columns: [
+                  {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+                  {data: 'HOSPCODE', name: 'HOSPCODE'},
+                  {data: 'HOS_NAME', name: 'HOS_NAME'},
+                  {data: 'action', name: 'action', orderable: false, searchable: false},
+              ]
+          });
+         
+          $(".searchName").keyup(function(){
+              table.draw();
+          });
+        
+        });
+      </script>
 
     <script>
         $(window).on("load", function(){
@@ -210,8 +241,6 @@
     
         // Chart Options
         var chartOptions = {
-            // Elements options apply to all of the options unless overridden in a dataset
-            // In this case, we are setting the border of each bar to be 2px wide and green
             elements: {
                 rectangle: {
                     borderWidth: 2,
@@ -271,29 +300,7 @@
                 backgroundColor: "#28D094",
                 hoverBackgroundColor: "rgba(255, 0, 102)",
                 borderColor: "transparent"
-            // },
-            //  {
-            //     label: "พนักงานราชการ",
-            //     data: [
-            //         [ <?php echo $chaingmai; ?>],
-            //       [ <?php echo $data; ?>],
-            //       [ <?php echo $per; ?>],
-            //       [ <?php echo $assets; ?>]
-            //     ],
-            //     backgroundColor: "#F98E76",
-            //     hoverBackgroundColor: "rgba(249,142,248,.9)",
-            //     borderColor: "transparent"
-            // }, {
-            //     label: "พนักงานราชการ",
-            //     data: [
-            //         [ <?php echo $chaingmai; ?>],
-            //       [ <?php echo $data; ?>],
-            //       [ <?php echo $per; ?>],
-            //       [ <?php echo $assets; ?>]
-            //     ],
-            //     backgroundColor: "#cb76f9",
-            //     hoverBackgroundColor: "rgba(249,142,118,.9)",
-            //     borderColor: "transparent"
+         
             }]
         };
     

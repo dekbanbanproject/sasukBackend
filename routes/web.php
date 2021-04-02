@@ -38,7 +38,7 @@ Route::get('backend/personcount',[UserAuthController::class,'personcount'])->nam
 // Route::get('backend/dashboard/indexdh',[DashController::class,'indexdh'])->name('dash.indexdh');
 Route::get('backend/dashboardperson',[DashController::class,'dashboardperson'])->name('dash.dashboardperson');
 
-Route::get('backend/person_province/{hoscode}',[DashController::class,'personprovinceonly'])->name('dash.personprovinceonly');
+Route::get('backend/dashboardperson_only/{provincecode}',[DashController::class,'personprovinceonly'])->name('dash.personprovinceonly');
 
 
 

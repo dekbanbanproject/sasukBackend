@@ -12,6 +12,16 @@
   rel="stylesheet">
   <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css"
   rel="stylesheet">
+   <!-- BEGIN: Vendor CSS-->
+   {{-- <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/vendors.min.css') }}"> --}}
+   {{-- <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/tables/datatable/datatables.min.css') }}">
+   <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/tables/extensions/responsive.dataTables.min.css') }}">
+   <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/tables/extensions/colReorder.dataTables.min.css') }}">
+   <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/tables/datatable/select.dataTables.min.css') }}">
+   <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/tables/extensions/buttons.dataTables.min.css') }}">
+   <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/tables/datatable/buttons.bootstrap4.min.css') }}"> --}}
+   <!-- END: Vendor CSS-->
+
   <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/vendors.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/app.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/core/menu/menu-types/vertical-compact-menu.css') }}">
@@ -21,3 +31,4 @@
   <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/fonts/simple-line-icons/style.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/core/colors/palette-gradient.css') }}">
 
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
