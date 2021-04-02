@@ -59,7 +59,7 @@ use App\Http\Controllers\DashController;
                               <td align="center">{{ DashController::pertypeE($item->HOSPCODE) }}</td>
                               <td align="center">{{ DashController::pertypeF($item->HOSPCODE) }}</td>
                               <td align="center">{{ DashController::pertypeH($item->HOSPCODE) }}</td>
-                              <td align="center">{{ DashController::pertypeG($item->HOSPCODE) }}</td>
+                              <td align="center" style="color:red;font-size:15px;font-weight:bold mr-3">{{ DashController::pertypeG($item->HOSPCODE) }}</td>
                               <td align="center">{{ DashController::checkhoscode($item->HOSPCODE) }}</td>
                             </tr>
                             @endforeach 
@@ -125,8 +125,15 @@ use App\Http\Controllers\DashController;
                               <td align="center">{{ DashController::positionD($item->HOSPCODE) }}</td>
                               <td align="center">{{ DashController::positionE($item->HOSPCODE) }}</td>
                               <td align="center">{{ DashController::positionF($item->HOSPCODE) }}</td>
-                              <td align="center">{{ DashController::positionG($item->HOSPCODE) }}</td>
-                              <td align="center">{{ DashController::positionH($item->HOSPCODE) }}</td>
+
+                              
+                              {{-- @if ( {{ DashController::positionG($item->HOSPCODE)}} ) == 0 ) --}}
+                                <td align="center" > {{ DashController::positionG($item->HOSPCODE) }} </td>
+                              {{-- @else --}}
+                                {{-- <td align="center">{{ DashController::positionG($item->HOSPCODE) }}</td> --}}
+                              {{-- @endif --}}
+                            
+                              <td align="center" style="color:red;font-size:15px;font-weight:bold mr-3">{{ DashController::positionH($item->HOSPCODE) }}</td>
                               {{-- <td align="center">{{ DashController::positionI($item->HOSPCODE) }}</td> --}}
                               {{-- <td align="center">{{ DashController::positionJ($item->HOSPCODE) }}</td> --}}
                             </tr>

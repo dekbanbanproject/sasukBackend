@@ -105,7 +105,7 @@
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body">
-                            <canvas id="persons-chart" height="480"></canvas>
+                            <canvas id="persons-chart" height="550"></canvas>
                         </div>
                     </div>
                 </div>
