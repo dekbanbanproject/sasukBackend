@@ -131,246 +131,219 @@ function backend_dashboard(Request $request)
        $data = User::where('id','=',session('LogedUser'))->first();
     }
 
-    $per = DB::table('persons')
-    ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
-    ->count();
-    $maxch = 50000;
-    $percen = $per * 100 / $maxch;
+    // $per = DB::table('persons')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+    // ->count();
+    // $maxch = 50000;
+    // $percen = $per * 100 / $maxch;
 
-    $assets = DB::table('assets')
-    ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
-    ->count();
-    $maxch = 50000;
-    $assetscen = $assets * 100 / $maxch;
+    // $assets = DB::table('assets')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
+    // ->count();
+    // $maxch = 50000;
+    // $assetscen = $assets * 100 / $maxch;
 
-    $assetbuildings = DB::table('assetbuildings')
-    ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
-    ->count();
-    $maxch = 2000;
-    $assetbuildingscen = $assetbuildings * 100 / $maxch;
+    // $assetbuildings = DB::table('assetbuildings')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
+    // ->count();
+    // $maxch = 2000;
+    // $assetbuildingscen = $assetbuildings * 100 / $maxch;
 
-    $hos = DB::table('persons')
-    // ->select("hospcode.hospcode",DB::raw("COUNT(*) as count_hospcode"))
-    ->select("HOSPCODE,COUNT(HOSPCODE)")
+    // $hos = DB::table('persons')
+    // ->select("HOSPCODE,COUNT(HOSPCODE)")
+    // ->groupBy("HOSPCODE")
+    // ->count();
+
+ 
+    // $chaingmai = DB::table('persons')
     // ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
     // ->where('hospcode.chwpart','=',50)
+    // ->count();
+    // $maxch = 10000;
+    // $perchaingmaicen = $chaingmai * 100 / $maxch;
+
+    // $lamphoon = DB::table('persons')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
     // ->where('hospcode.chwpart','=',51)
+    // ->count();
+    // $maxch = 10000;
+    // $perlamphooncen = $lamphoon * 100 / $maxch;
+
+    // $lampang = DB::table('persons')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
     // ->where('hospcode.chwpart','=',52)
-    // ->where('hospcode.chwpart','=',54)
-    // ->where('hospcode.chwpart','=',55)
-    // ->where('hospcode.chwpart','=',56)
-    // ->where('hospcode.chwpart','=',57)
-    // ->where('hospcode.chwpart','=',58)
-    ->groupBy("HOSPCODE")
-    ->count();
-
-    // SELECT country,COUNT(*)
-    // FROM author      
-    // GROUP BY country;
-
-    // ->select("users.id", "users.name", DB::raw("COUNT(click.*) as count_click"))
-	//     ->join("click","click.user_id","=","users.id")
-	//     ->groupBy("users.id")
-
-
-    $chaingmai = DB::table('persons')
-    ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
-    ->where('hospcode.chwpart','=',50)
-    ->count();
-    $maxch = 10000;
-    $perchaingmaicen = $chaingmai * 100 / $maxch;
-
-    $lamphoon = DB::table('persons')
-    ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
-    ->where('hospcode.chwpart','=',51)
-    ->count();
-    $maxch = 10000;
-    $perlamphooncen = $lamphoon * 100 / $maxch;
-
-    $lampang = DB::table('persons')
-    ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
-    ->where('hospcode.chwpart','=',52)
-    ->count();
-    $maxch = 10000;
-    $perlampangcen = $lampang * 100 / $maxch;
+    // ->count();
+    // $maxch = 10000;
+    // $perlampangcen = $lampang * 100 / $maxch;
     
-    $prae = DB::table('persons')
-    ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
-    ->where('hospcode.chwpart','=',54)
-    ->count();
-    $maxch = 10000;
-    $perpraecen = $prae * 100 / $maxch;
+    // $prae = DB::table('persons')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+    // ->where('hospcode.chwpart','=',54)
+    // ->count();
+    // $maxch = 10000;
+    // $perpraecen = $prae * 100 / $maxch;
 
-    $nan = DB::table('persons')
-    ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
-    ->where('hospcode.chwpart','=',55)
-    ->count();
-    $maxch = 10000;
-    $pernancen = $nan * 100 / $maxch;
+    // $nan = DB::table('persons')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+    // ->where('hospcode.chwpart','=',55)
+    // ->count();
+    // $maxch = 10000;
+    // $pernancen = $nan * 100 / $maxch;
 
-    $payoua = DB::table('persons')
-    ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
-    ->where('hospcode.chwpart','=',56)
-    ->count();
-    $maxch = 10000;
-    $perpayouacen = $payoua * 100 / $maxch;
+    // $payoua = DB::table('persons')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+    // ->where('hospcode.chwpart','=',56)
+    // ->count();
+    // $maxch = 10000;
+    // $perpayouacen = $payoua * 100 / $maxch;
 
-    $chaingray= DB::table('persons')
-    ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
-    ->where('hospcode.chwpart','=',57)
-    ->count();
-    $maxch = 10000;
-    $perchaingraycen = $chaingray * 100 / $maxch;
+    // $chaingray= DB::table('persons')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+    // ->where('hospcode.chwpart','=',57)
+    // ->count();
+    // $maxch = 10000;
+    // $perchaingraycen = $chaingray * 100 / $maxch;
 
-    $maehongson= DB::table('persons')
-    ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
-    ->where('hospcode.chwpart','=',58)
-    ->count();
-    $maxch = 10000;
-    $permaehongsoncen = $maehongson * 100 / $maxch;
-    // $personchw= DB::table('persons')
+    // $maehongson= DB::table('persons')
     // ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
     // ->where('hospcode.chwpart','=',58)
     // ->count();
-    $As_chaingmai = DB::table('assets')
-    ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
-    ->where('hospcode.chwpart','=',50)
-    ->count();
-    $maxch = 20000;
-    $As_chaingmaicen = $As_chaingmai * 100 / $maxch;
+    // $maxch = 10000;
+    // $permaehongsoncen = $maehongson * 100 / $maxch;
+    // // $personchw= DB::table('persons')
+    // // ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
+    // // ->where('hospcode.chwpart','=',58)
+    // // ->count();
+    // $As_chaingmai = DB::table('assets')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
+    // ->where('hospcode.chwpart','=',50)
+    // ->count();
+    // $maxch = 20000;
+    // $As_chaingmaicen = $As_chaingmai * 100 / $maxch;
 
-    $As_lamphoon = DB::table('assets')
-    ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
-    ->where('hospcode.chwpart','=',51)
-    ->count();
-    $maxch = 20000;
-    $As_lamphooncen = $As_lamphoon * 100 / $maxch;
+    // $As_lamphoon = DB::table('assets')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
+    // ->where('hospcode.chwpart','=',51)
+    // ->count();
+    // $maxch = 20000;
+    // $As_lamphooncen = $As_lamphoon * 100 / $maxch;
 
-    $As_lampang = DB::table('assets')
-    ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
-    ->where('hospcode.chwpart','=',52)
-    ->count();
-    $maxch = 20000;
-    $As_lampangcen = $As_lampang * 100 / $maxch;
+    // $As_lampang = DB::table('assets')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
+    // ->where('hospcode.chwpart','=',52)
+    // ->count();
+    // $maxch = 20000;
+    // $As_lampangcen = $As_lampang * 100 / $maxch;
    
-    $As_prae = DB::table('assets')
-    ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
-    ->where('hospcode.chwpart','=',54)
-    ->count();
-    $maxch = 20000;
-    $As_praecen = $As_prae * 100 / $maxch;
+    // $As_prae = DB::table('assets')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
+    // ->where('hospcode.chwpart','=',54)
+    // ->count();
+    // $maxch = 20000;
+    // $As_praecen = $As_prae * 100 / $maxch;
 
-    $As_nan = DB::table('assets')
-    ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
-    ->where('hospcode.chwpart','=',55)
-    ->count();
-    $maxch = 20000;
-    $As_nancen = $As_nan * 100 / $maxch;
+    // $As_nan = DB::table('assets')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
+    // ->where('hospcode.chwpart','=',55)
+    // ->count();
+    // $maxch = 20000;
+    // $As_nancen = $As_nan * 100 / $maxch;
 
-    $As_payoua = DB::table('assets')
-    ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
-    ->where('hospcode.chwpart','=',56)
-    ->count();
-    $maxch = 20000;
-    $As_payouacen = $As_payoua * 100 / $maxch;
+    // $As_payoua = DB::table('assets')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
+    // ->where('hospcode.chwpart','=',56)
+    // ->count();
+    // $maxch = 20000;
+    // $As_payouacen = $As_payoua * 100 / $maxch;
 
-    $As_chaingray= DB::table('assets')
-    ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
-    ->where('hospcode.chwpart','=',57)
-    ->count();
-    $maxch = 20000;
-    $As_chaingraycen = $As_chaingray * 100 / $maxch;
+    // $As_chaingray= DB::table('assets')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
+    // ->where('hospcode.chwpart','=',57)
+    // ->count();
+    // $maxch = 20000;
+    // $As_chaingraycen = $As_chaingray * 100 / $maxch;
 
-    $As_maehongson= DB::table('assets')
-    ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
-    ->where('hospcode.chwpart','=',58)
-    ->count();
-    $maxch = 20000;
-    $As_maehongsoncen = $As_maehongson * 100 / $maxch;
+    // $As_maehongson= DB::table('assets')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','assets.HOSPCODE')
+    // ->where('hospcode.chwpart','=',58)
+    // ->count();
+    // $maxch = 20000;
+    // $As_maehongsoncen = $As_maehongson * 100 / $maxch;
 
-    ////////////////////////////////////////////////////////////////
+    // ////////////////////////////////////////////////////////////////
     
-    $buil_chaingmai = DB::table('assetbuildings')
-    ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
-    ->where('hospcode.chwpart','=',50)
-    ->count();
-    $maxch = 500;
-    $buil_chaingmaicen = $buil_chaingmai * 100 / $maxch;
+    // $buil_chaingmai = DB::table('assetbuildings')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
+    // ->where('hospcode.chwpart','=',50)
+    // ->count();
+    // $maxch = 500;
+    // $buil_chaingmaicen = $buil_chaingmai * 100 / $maxch;
 
-    $buil_lamphoon = DB::table('assetbuildings')
-    ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
-    ->where('hospcode.chwpart','=',51)
-    ->count();
-    $maxch = 500;
-    $buil_lamphooncen = $buil_lamphoon * 100 / $maxch;
+    // $buil_lamphoon = DB::table('assetbuildings')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
+    // ->where('hospcode.chwpart','=',51)
+    // ->count();
+    // $maxch = 500;
+    // $buil_lamphooncen = $buil_lamphoon * 100 / $maxch;
 
-    $buil_lampang = DB::table('assetbuildings')
-    ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
-    ->where('hospcode.chwpart','=',52)
-    ->count();
-    $maxch = 500;
-    $buil_lampangcen = $buil_lampang * 100 / $maxch;
+    // $buil_lampang = DB::table('assetbuildings')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
+    // ->where('hospcode.chwpart','=',52)
+    // ->count();
+    // $maxch = 500;
+    // $buil_lampangcen = $buil_lampang * 100 / $maxch;
    
-    $buil_prae = DB::table('assetbuildings')
-    ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
-    ->where('hospcode.chwpart','=',54)
-    ->count();
-    $maxch = 500;
-    $buil_praegcen = $buil_prae * 100 / $maxch;
+    // $buil_prae = DB::table('assetbuildings')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
+    // ->where('hospcode.chwpart','=',54)
+    // ->count();
+    // $maxch = 500;
+    // $buil_praegcen = $buil_prae * 100 / $maxch;
 
-    $buil_nan = DB::table('assetbuildings')
-    ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
-    ->where('hospcode.chwpart','=',55)
-    ->count();
-    $maxch = 500;
-    $buil_nangcen = $buil_nan * 100 / $maxch;
+    // $buil_nan = DB::table('assetbuildings')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
+    // ->where('hospcode.chwpart','=',55)
+    // ->count();
+    // $maxch = 500;
+    // $buil_nangcen = $buil_nan * 100 / $maxch;
     
-    $buil_payoua = DB::table('assetbuildings')
-    ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
-    ->where('hospcode.chwpart','=',56)
-    ->count();
-    $maxch = 500;
-    $buil_payouacen = $buil_payoua * 100 / $maxch;
+    // $buil_payoua = DB::table('assetbuildings')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
+    // ->where('hospcode.chwpart','=',56)
+    // ->count();
+    // $maxch = 500;
+    // $buil_payouacen = $buil_payoua * 100 / $maxch;
 
-    $buil_chaingray= DB::table('assetbuildings')
-    ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
-    ->where('hospcode.chwpart','=',57)
-    ->count();
-    $maxch = 500;
-    $buil_chaingraycen = $buil_chaingray * 100 / $maxch;
+    // $buil_chaingray= DB::table('assetbuildings')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
+    // ->where('hospcode.chwpart','=',57)
+    // ->count();
+    // $maxch = 500;
+    // $buil_chaingraycen = $buil_chaingray * 100 / $maxch;
 
-    $buil_maehongson= DB::table('assetbuildings')
-    ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
-    ->where('hospcode.chwpart','=',58)
-    ->count();
-    $maxch = 500;
-    $buil_maehongsoncen = $buil_maehongson * 100 / $maxch;
+    // $buil_maehongson= DB::table('assetbuildings')
+    // ->leftjoin('hospcode','hospcode.hospcode','=','assetbuildings.HOSPCODE')
+    // ->where('hospcode.chwpart','=',58)
+    // ->count();
+    // $maxch = 500;
+    // $buil_maehongsoncen = $buil_maehongson * 100 / $maxch;
 
-    return view('backend/layout/dashboard',[
-        'assetscen'=>$assetscen,'assetbuildingscen'=>$assetbuildingscen,
-
-        'hos'=>$hos,'buil_chaingmaicen'=>$buil_chaingmaicen,'buil_lamphooncen'=>$buil_lamphooncen,'buil_lampangcen'=>$buil_lampangcen,
-
-        'buil_praegcen'=>$buil_praegcen, 'buil_nangcen'=>$buil_nangcen,'buil_payouacen'=>$buil_payouacen,'buil_chaingraycen'=>$buil_chaingraycen,'buil_maehongsoncen'=>$buil_maehongsoncen,
-      
-
-        'chaingmai'=>$chaingmai, 'lampang'=>$lampang, 'lamphoon'=>$lamphoon,'prae'=>$prae,'nan'=>$nan,
-        'payoua'=>$payoua, 'chaingray'=>$chaingray,'maehongson'=>$maehongson,
-        'perchaingmaicen'=>$perchaingmaicen, 'perlamphooncen'=>$perlamphooncen, 'perlampangcen'=>$perlampangcen,'perpraecen'=>$perpraecen,'pernancen'=>$pernancen,
-        'perpayouacen'=>$perpayouacen, 'perchaingraycen'=>$perchaingraycen,'permaehongsoncen'=>$permaehongsoncen,
-
-
-
-        'data'=>$data,'per'=>$per,'percen'=>$percen,'assets'=>$assets,'assetbuildings'=>$assetbuildings,        
-
-        'As_chaingmaicen'=>$As_chaingmaicen, 'As_chaingraycen'=>$As_chaingraycen,'As_nancen'=>$As_nancen,'As_lampangcen'=>$As_lampangcen,
-        'As_lamphooncen'=>$As_lamphooncen,'As_praecen'=>$As_praecen,'As_payouacen'=>$As_payouacen,'As_maehongsoncen'=>$As_maehongsoncen,
-
-        'As_chaingmai'=>$As_chaingmai, 'As_lampang'=>$As_lampang, 'As_lamphoon'=>$As_lamphoon,'As_prae'=>$As_prae,'As_nan'=>$As_nan,
-        'As_payoua'=>$As_payoua, 'As_chaingray'=>$As_chaingray,'As_maehongson'=>$As_maehongson,
-
-        'buil_chaingmai'=>$buil_chaingmai, 'buil_lampang'=>$buil_lampang, 'buil_lamphoon'=>$buil_lamphoon,'buil_prae'=>$buil_prae,'buil_nan'=>$buil_nan,
-        'buil_payoua'=>$buil_payoua, 'buil_chaingray'=>$buil_chaingray,'buil_maehongson'=>$buil_maehongson,
+    return view('backend/layout/scan_dashboard',[
+        'data'=>$data,
+        // 'assetscen'=>$assetscen,'assetbuildingscen'=>$assetbuildingscen,
+        // 'hos'=>$hos,'buil_chaingmaicen'=>$buil_chaingmaicen,'buil_lamphooncen'=>$buil_lamphooncen,'buil_lampangcen'=>$buil_lampangcen,
+        // 'buil_praegcen'=>$buil_praegcen, 'buil_nangcen'=>$buil_nangcen,'buil_payouacen'=>$buil_payouacen,'buil_chaingraycen'=>$buil_chaingraycen,'buil_maehongsoncen'=>$buil_maehongsoncen,
+        // 'chaingmai'=>$chaingmai, 'lampang'=>$lampang, 'lamphoon'=>$lamphoon,'prae'=>$prae,'nan'=>$nan,
+        // 'payoua'=>$payoua, 'chaingray'=>$chaingray,'maehongson'=>$maehongson,
+        // 'perchaingmaicen'=>$perchaingmaicen, 'perlamphooncen'=>$perlamphooncen, 'perlampangcen'=>$perlampangcen,'perpraecen'=>$perpraecen,'pernancen'=>$pernancen,
+        // 'perpayouacen'=>$perpayouacen, 'perchaingraycen'=>$perchaingraycen,'permaehongsoncen'=>$permaehongsoncen,
+        // 'per'=>$per,'percen'=>$percen,'assets'=>$assets,'assetbuildings'=>$assetbuildings,        
+        // 'As_chaingmaicen'=>$As_chaingmaicen, 'As_chaingraycen'=>$As_chaingraycen,'As_nancen'=>$As_nancen,'As_lampangcen'=>$As_lampangcen,
+        // 'As_lamphooncen'=>$As_lamphooncen,'As_praecen'=>$As_praecen,'As_payouacen'=>$As_payouacen,'As_maehongsoncen'=>$As_maehongsoncen,
+        // 'As_chaingmai'=>$As_chaingmai, 'As_lampang'=>$As_lampang, 'As_lamphoon'=>$As_lamphoon,'As_prae'=>$As_prae,'As_nan'=>$As_nan,
+        // 'As_payoua'=>$As_payoua, 'As_chaingray'=>$As_chaingray,'As_maehongson'=>$As_maehongson,
+        // 'buil_chaingmai'=>$buil_chaingmai, 'buil_lampang'=>$buil_lampang, 'buil_lamphoon'=>$buil_lamphoon,'buil_prae'=>$buil_prae,'buil_nan'=>$buil_nan,
+        // 'buil_payoua'=>$buil_payoua, 'buil_chaingray'=>$buil_chaingray,'buil_maehongson'=>$buil_maehongson,
 
     ]);
 }
