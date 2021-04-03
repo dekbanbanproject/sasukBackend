@@ -346,7 +346,7 @@ function backend_dashboard(Request $request)
     $maxch = 500;
     $buil_maehongsoncen = $buil_maehongson * 100 / $maxch;
 
-    return view('backend/dashboard',[
+    return view('backend/layout/dashboard',[
         'assetscen'=>$assetscen,'assetbuildingscen'=>$assetbuildingscen,
 
         'hos'=>$hos,'buil_chaingmaicen'=>$buil_chaingmaicen,'buil_lamphooncen'=>$buil_lamphooncen,'buil_lampangcen'=>$buil_lampangcen,

@@ -14,7 +14,7 @@ class DashController extends Controller
         if (session()->has('LogedUser')) {
             $data = User::where('id','=',session('LogedUser'))->first();
          }
-        return view('backend/dashboard/indexdh',[
+        return view('backend/layout/dashboard/indexdh',[
             'data'=>$data,
         ]);
     }
@@ -455,7 +455,7 @@ class DashController extends Controller
 
 
 
-        return view('backend/dashboardperson',[
+        return view('backend/layout/dashboardperson',[
 
 
             
@@ -816,7 +816,7 @@ class DashController extends Controller
 
 
 
-        return view('backend/dashboardperson_only',[
+        return view('backend/layout/dashboardperson_only',[
 
             'pertype_A'=>$pertype_A,'pertype_B'=>$pertype_B,'pertype_C'=>$pertype_C,'pertype_H'=>$pertype_H,
             'pertype_D'=>$pertype_D,'pertype_E'=>$pertype_E,'pertype_F'=>$pertype_F,'pertype_G'=>$pertype_G,

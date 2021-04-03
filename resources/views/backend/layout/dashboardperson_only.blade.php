@@ -2,7 +2,7 @@
 <html class="loading" lang="en" data-textdirection="ltr">
 <head>
 
-    @include('backend/headerC')
+    @include('backend/layout/headerC')
 
 </head>
 <style>
@@ -187,16 +187,16 @@
 <body class="vertical-layout vertical-compact-menu 2-columns   menu-expanded fixed-navbar" data-open="click" data-menu="vertical-compact-menu" data-col="2-columns">
   
   
-    @include('backend/navbar')
+    @include('backend/layout/navbar')
    
 
-    @include('backend/sidebar')
+    @include('backend/layout/sidebar')
  
 
     @include('backend/dashboard/contentperson_province')
  
 
-    @include('backend/footerC')
+    @include('backend/layout/footerC')
 
 <script>
     $(window).on("load", function(){

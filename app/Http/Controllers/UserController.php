@@ -31,6 +31,6 @@ class UserController extends Controller
     function editprofile(Request $request)
     {
 
-        return view('editprofile');
+        return view('backend/profile/editprofile');
     }
 }

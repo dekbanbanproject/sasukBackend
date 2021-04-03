@@ -2,7 +2,7 @@
 <html class="loading" lang="en" data-textdirection="ltr">
 <head>
 
-    @include('backend/headerB')
+    @include('backend/layout/headerB')
 
 </head>
 <style>
@@ -639,18 +639,18 @@
 <body class="vertical-layout vertical-compact-menu 2-columns   menu-expanded fixed-navbar" data-open="click" data-menu="vertical-compact-menu" data-col="2-columns">
   
   
-    @include('backend/navbar')
+    @include('backend/layout/navbar')
    
 
 
-    @include('backend/sidebar')
+    @include('backend/layout/sidebar')
  
 
 
     @include('backend/dashboard/content')
  
 
-    @include('backend/footerB')
+    @include('backend/layout/footerB')
 
     {{-- <script src="{{ asset('app-assets/js/scripts/charts/chartjs/bar/progress.js') }}"></script> --}}
     <script src="{{ asset('app-assets/js/progress.js') }}"></script>
