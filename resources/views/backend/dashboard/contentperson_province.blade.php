@@ -6,6 +6,112 @@ use App\Http\Controllers\DashController;
   <div class="content-overlay"></div>
     <div class="content-wrapper">    
         <div class="content-body"> 
+
+          <div class="row"> 
+            <div class="col-12 col-md-3">
+              <div class="card">
+                  <div class="card-header">
+                      <h4 class="card-title">ข้อมูลโรงพยาบาล</h4> 
+                      <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                      <div class="heading-elements">
+                          <ul class="list-inline mb-0">
+                              <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                              <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                              <li><a data-action="close"><i class="ft-x"></i></a></li>
+                          </ul>
+                      </div>                  
+                  </div>
+                  <div class="card-content collapse show" >
+                      <div class="card-body ">
+                          @foreach ($hos_province as $item) 
+                                <div class="form-group text-left">
+                                  <h6><a href="" >{{$item->HOSPCODE}} : {{$item->HOS_NAME}}</a></h6>
+                                </div>
+                          @endforeach 
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+
+            <div class="col-12 col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Person Type All Chart ในจังหวัด {{ $hos_per_province->province_name}}</h4>
+                        <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                        <div class="heading-elements">
+                            <ul class="list-inline mb-0">
+                                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                <li><a data-action="close"><i class="ft-x"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-content collapse show">
+                        <div class="card-body">
+                            <canvas id="persontype-chart" height="450"></canvas>
+                            {{-- <div id="doughnut"  height="400"></div> --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-5">
+              <div class="card">
+                  <div class="card-header">
+                      <h4 class="card-title">Person Position All Chart ในจังหวัด {{ $hos_per_province->province_name}}</h4>
+                      <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                      <div class="heading-elements">
+                          <ul class="list-inline mb-0">
+                              <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                              <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                              <li><a data-action="close"><i class="ft-x"></i></a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="card-content collapse show">
+                      <div class="card-body">
+                          <canvas id="personposition-chart" height="450"></canvas>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          </div>
+
+
+          {{-- <div class="row">  
+            <div class="col-12 col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">ข้อมูลโรงพยาบาลในจังหวัด {{ $hos_per_province->province_name}}</h4>
+                        <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                        <div class="heading-elements">
+                            <ul class="list-inline mb-0">
+                                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                <li><a data-action="close"><i class="ft-x"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-content collapse show">
+                        <div class="card-body">
+                              <div class="row">  
+                                  @foreach ($hos_province as $item) 
+                                      <div class="col-xl-3 col-lg-12 mb-1">
+                                        <div class="form-group text-center">
+                                          <h3><a href="">{{$item->HOS_NAME}}</a></h3>
+                                        </div>
+                                    </div>
+                                  @endforeach 
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div> --}}
+
+
             <section id="scrolling">
               <div class="row">
                 <div class="col-12">
@@ -71,7 +177,9 @@ use App\Http\Controllers\DashController;
                   </div>
                 </div>
               </div>
-            </section>  
+            </section> 
+            
+            
             <section id="scrolling">
               <div class="row">
                 <div class="col-12">

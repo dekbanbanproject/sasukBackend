@@ -33,5 +33,3 @@
   <!-- BEGIN: Page JS-->
   <script src="{{ asset('app-assets/js/scripts/tables/datatables-extensions/datatable-responsive.js') }}"></script>
   <!-- END: Page JS-->
-
- 

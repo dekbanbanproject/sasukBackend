@@ -259,13 +259,13 @@
             label: "บุคคลากรทั้งหมด",
             data: [           
                 [ <?php echo $chaingmai; ?>],
-            [ <?php echo $lamphoon; ?>],
-            [ <?php echo $lampang; ?>],        
-            [ <?php echo $prae; ?>],
-            [ <?php echo $nan; ?>],
-            [ <?php echo $payoua; ?>],
-            [ <?php echo $chaingray; ?>],
-            [ <?php echo $maehongson; ?>]
+                [ <?php echo $lamphoon; ?>],
+                [ <?php echo $lampang; ?>],        
+                [ <?php echo $prae; ?>],
+                [ <?php echo $nan; ?>],
+                [ <?php echo $payoua; ?>],
+                [ <?php echo $chaingray; ?>],
+                [ <?php echo $maehongson; ?>]
                 ],
             backgroundColor: "#28D094",
             hoverBackgroundColor: "rgba(246,82,45,.9)",

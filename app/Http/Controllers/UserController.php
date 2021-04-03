@@ -27,4 +27,10 @@ class UserController extends Controller
         
              return response($response, 201);
     }
+
+    function editprofile(Request $request)
+    {
+
+        return view('editprofile');
+    }
 }

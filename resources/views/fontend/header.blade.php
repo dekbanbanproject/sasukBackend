@@ -7,8 +7,8 @@
                     <div class="row align-items-center">
                         <!-- Logo -->
                         <div class="col-xl-3 col-lg-3 col-md-1">
-                            <div class="logo">
-                                <a href="/"><img src="{{ asset('/img/ss.png') }}" alt="" width="80" height="80"> <h3>Sasuk </h3></a>
+                            <div class="logo mt-2">
+                                <a href="/"><img src="{{ asset('/img/logo.png') }}" alt="" width="100" height="60"> <h3>gtw-backoffice </h3></a>
                                
                             </div>
                         </div>
@@ -19,8 +19,8 @@
                                     <nav> 
                                         <ul id="navigation">
                                             <li><a href="{{url('/')}}">หน้าหลัก</a></li>
-                                            <li><a href="{{url('fontend/About')}}" >About</a></li>
-                                            <li><a href="{{url('fontend/Menu')}}">Menu</a></li>
+                                            {{-- <li><a href="{{url('fontend/About')}}" >About</a></li> --}}
+                                            {{-- <li><a href="{{url('fontend/Menu')}}">Menu</a></li> --}}
                                             <li><a href="{{url('fontend/blog/index')}}">Blog</a>
                                                 <ul class="submenu">
                                                     <li><a href="{{url('fontend/blog/index')}}">Blog</a></li>

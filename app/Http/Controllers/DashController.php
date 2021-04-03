@@ -449,7 +449,15 @@ class DashController extends Controller
     $maxch = 10000;
     $permaehongsoncen = $maehongson * 100 / $maxch;
 
+
+
+
+
+
+
         return view('backend/dashboardperson',[
+
+
             
         'chaingmai'=>$chaingmai, 'lampang'=>$lampang, 'lamphoon'=>$lamphoon,'prae'=>$prae,'nan'=>$nan,
         'payoua'=>$payoua, 'chaingray'=>$chaingray,'maehongson'=>$maehongson,
@@ -630,55 +638,8 @@ class DashController extends Controller
                 ->groupBy('persons.HOSPCODE')
                 ->count();
 
-                // $hos_province2 = DB::table('persons')
-                // ->select('hospcode.chwpart','persons.HOSPCODE','persons.HOS_NAME','hospcode.province_name')
-                // ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
-                // ->where('hospcode.chwpart','=',$provincecode)
-                // ->groupBy('hospcode.chwpart','persons.HOSPCODE','persons.HOS_NAME','hospcode.province_name')
-                // ->get();
-
-            // foreach ($hos_province2 as $hos){
-            //     $hos_province3 = DB::table('persons')
-            //     ->select('hospcode.chwpart','persons.HOSPCODE','persons.HOS_NAME','hospcode.province_name')
-            //     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
-            //     ->where('hospcode.chwpart','=',$provincecode)
-            //     ->groupBy('hospcode.chwpart','persons.HOSPCODE','persons.HOS_NAME','hospcode.province_name')
-            //     ->first();
-
-            //     $countcheck  =  DB::table('persons')->where('HOSPCODE','=',$hos->HOSPCODE)->count();
-
-            // }
-           
-
-            // $hos_per_lamphoon = DB::table('persons')
-            //     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
-            //     ->where('hospcode.chwpart','=',51)
-            // ->first();
-            // $hos_per_lampang = DB::table('persons')
-            //     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
-            //     ->where('hospcode.chwpart','=',52)
-            // ->first();
-            
-            // $hos_per_prae = DB::table('persons')
-            //     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
-            //     ->where('hospcode.chwpart','=',54)
-            // ->first();
-            // $hos_per_nan = DB::table('persons')
-            //     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
-            //     ->where('hospcode.chwpart','=',55)
-            // ->first();
-            // $hos_per_payoua = DB::table('persons')
-            //     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
-            //     ->where('hospcode.chwpart','=',56)
-            // ->first();
-            // $hos_per_chaingray= DB::table('persons')
-            //     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
-            //     ->where('hospcode.chwpart','=',57)
-            // ->first();
-            // $hos_per_maehongson= DB::table('persons')
-            //     ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')
-            //     ->where('hospcode.chwpart','=',58)
-            // ->first();
+                
+          
 
             /////////////////////////////////////////////
 
@@ -775,7 +736,94 @@ class DashController extends Controller
         $maxch = 10000;
         $permaehongsoncen = $maehongson * 100 / $maxch;
 
+        $pertype_A = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')->where('hospcode.chwpart','=',$provincecode)
+            ->where('HR_PERSON_TYPE_ID','=',1)->count(); 
+       
+        $pertype_B = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')->where('hospcode.chwpart','=',$provincecode)
+            ->where('HR_PERSON_TYPE_ID','=',2)->count(); 
+      
+        $pertype_C = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')->where('hospcode.chwpart','=',$provincecode)
+            ->where('HR_PERSON_TYPE_ID','=',3)->count(); 
+
+        $pertype_D = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')->where('hospcode.chwpart','=',$provincecode)
+           ->where('HR_PERSON_TYPE_ID','=',4)->count(); 
+
+        $pertype_E = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')->where('hospcode.chwpart','=',$provincecode)
+            ->where('HR_PERSON_TYPE_ID','=',5)->count(); 
+
+        $pertype_F = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')->where('hospcode.chwpart','=',$provincecode)
+            ->where('HR_PERSON_TYPE_ID','=',6)->count(); 
+
+        $pertype_G = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')->where('hospcode.chwpart','=',$provincecode)
+            ->where('HR_PERSON_TYPE_ID','>',6)->count(); 
+        $pertype_H = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')->where('hospcode.chwpart','=',$provincecode)
+            ->where('HR_PERSON_TYPE_ID','=',NULL)->count(); 
+
+
+        $perposition_A = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')->where('hospcode.chwpart','=',$provincecode)
+            ->where('persons.HR_POSITION_ID','=',24)
+        ->count();
+        $perposition_B = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')->where('hospcode.chwpart','=',$provincecode)
+            ->where('persons.HR_POSITION_ID','=',21)
+        ->count();
+        $perposition_C = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')->where('hospcode.chwpart','=',$provincecode)
+            ->where('persons.HR_POSITION_ID','=',23)
+        ->count();
+        $perposition_D = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')->where('hospcode.chwpart','=',$provincecode)
+            ->where('persons.HR_POSITION_ID','=',7)
+        ->count();
+        $perposition_E = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')->where('hospcode.chwpart','=',$provincecode)
+            ->where('persons.HR_POSITION_ID','=',30)
+        ->count();
+        $perposition_F = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')->where('hospcode.chwpart','=',$provincecode)
+            ->where('persons.HR_POSITION_ID','=',3)
+        ->count();
+        $perposition_G = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')->where('hospcode.chwpart','=',$provincecode)
+            ->where('persons.HR_POSITION_ID','=',26)
+        ->count();
+
+        $perposition_6 = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')->where('hospcode.chwpart','=',$provincecode)
+            ->where('persons.HR_POSITION_ID','=',6)
+        ->count();
+        $perposition_22 = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')->where('hospcode.chwpart','=',$provincecode)
+            ->where('persons.HR_POSITION_ID','=',22)
+        ->count();
+        $perposition_25 = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')->where('hospcode.chwpart','=',$provincecode)
+            ->where('persons.HR_POSITION_ID','=',25)
+        ->count();
+        $perposition_27 = DB::table('persons')
+            ->leftjoin('hospcode','hospcode.hospcode','=','persons.HOSPCODE')->where('hospcode.chwpart','=',$provincecode)
+            ->where('persons.HR_POSITION_ID','=',27)
+        ->count();
+
+
+
         return view('backend/dashboardperson_only',[
+
+            'pertype_A'=>$pertype_A,'pertype_B'=>$pertype_B,'pertype_C'=>$pertype_C,'pertype_H'=>$pertype_H,
+            'pertype_D'=>$pertype_D,'pertype_E'=>$pertype_E,'pertype_F'=>$pertype_F,'pertype_G'=>$pertype_G,
+            'perposition_6'=>$perposition_6,'perposition_22'=>$perposition_22,'perposition_25'=>$perposition_25,'perposition_27'=>$perposition_27,
+
+            'perposition_A'=>$perposition_A,'perposition_B'=>$perposition_B,'perposition_C'=>$perposition_C,
+            'perposition_D'=>$perposition_D,'perposition_E'=>$perposition_E,'perposition_F'=>$perposition_F,'perposition_G'=>$perposition_G,
 
             'hos_per_province'=>$hos_per_province,'hos_province'=>$hos_province,'hos_provincecount'=>$hos_provincecount,'hoscode_count'=>$hoscode_count,
             // 'countcheck'=>$countcheck,
