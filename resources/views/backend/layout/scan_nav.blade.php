@@ -139,7 +139,7 @@
                             </li>
                             <li class="scrollable-container media-list w-100"><a href="javascript:void(0)">
                                     <div class="media">
-                                        <div class="media-left"><span class="avatar avatar-sm avatar-online rounded-circle"><img src="{{ asset('app-assets/images/portrait/small/avatar-s-19.png') }}') }}" alt="avatar"><i></i></span></div>
+                                        <div class="media-left"><span class="avatar avatar-sm avatar-online rounded-circle"><img src="{{ asset('app-assets/images/portrait/small/avatar-s-19.png') }}" alt="avatar"><i></i></span></div>
                                         <div class="media-body">
                                             <h6 class="media-heading">Margaret Govan</h6>
                                             <p class="notification-text font-small-3 text-muted">I like your portfolio, let's start.</p><small>

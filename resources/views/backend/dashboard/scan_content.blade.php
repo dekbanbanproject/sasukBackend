@@ -126,7 +126,7 @@
                                               <div class="designation text-light font-small-2">Dentist</div>
                                           </td>
                                           <td class="text-right border-top-0">
-                                              <a href="hospital-book-appointment.html" class="btn btn-sm btn-outline-success">Book Appointment</a>
+                                              <a href="hospital-book-appointment.html" class="btn btn-info btn-glow round px-2"> Appointment</a>
                                           </td>
                                       </tr>
                                       <tr>
@@ -140,7 +140,7 @@
                                               <div class="designation text-light font-small-2">Dentist</div>
                                           </td>
                                           <td class="text-right border-top-0 ">
-                                              <a href="hospital-book-appointment.html" class="btn btn-sm btn-outline-success">Book Appointment</a>
+                                              <a href="hospital-book-appointment.html" class="btn btn-info btn-glow round px-2"> Appointment</a>
                                           </td>
                                       </tr>
                                       <tr>
@@ -154,7 +154,7 @@
                                               <div class="designation text-light font-small-2">Dentist</div>
                                           </td>
                                           <td class="text-right">
-                                              <a href="hospital-book-appointment.html" class="btn btn-sm btn-outline-success">Book Appointment</a>
+                                              <a href="hospital-book-appointment.html" class="btn btn-info btn-glow round px-2"> Appointment</a>
                                           </td>
                                       </tr>
                                       <tr>
@@ -168,7 +168,7 @@
                                               <div class="designation text-light font-small-2">Dentist</div>
                                           </td>
                                           <td class="text-right">
-                                              <a href="hospital-book-appointment.html" class="btn btn-sm btn-outline-success">Book Appointment</a>
+                                              <a href="hospital-book-appointment.html" class="btn btn-info btn-glow round px-2"> Appointment</a>
                                           </td>
                                       </tr>
                                       <tr>
@@ -182,7 +182,7 @@
                                               <div class="designation text-light font-small-2">Dentist</div>
                                           </td>
                                           <td class="text-right border-bottom-0 ">
-                                              <a href="hospital-book-appointment.html" class="btn btn-sm btn-outline-success">Book Appointment</a>
+                                              <a href="hospital-book-appointment.html" class="btn btn-info btn-glow round px-2">Appointment</a>
                                           </td>
                                       </tr>
                                   </tbody>
@@ -234,7 +234,7 @@
                                               </ul>
                                           </td>
                                           <td>
-                                              <button type="button" class="btn btn-sm btn-outline-danger round">Dentist</button>
+                                              <button type="button" class="btn btn-info btn-glow round px-2">Dentist</button>
                                           </td>
                                           <td class="text-truncate">8:00 A.M. - 12:00 P.M.</td>
                                           <td class="text-truncate">$ 1200.00</td>
@@ -255,7 +255,7 @@
                                               </ul>
                                           </td>
                                           <td>
-                                              <button type="button" class="btn btn-sm btn-outline-success round">Dermatologist</button>
+                                              <button type="button" class="btn btn-info btn-glow round px-2">Dermatologist</button>
                                           </td>
                                           <td class="text-truncate">10:00 A.M. - 1:00 P.M.</td>
                                           <td class="text-truncate">$ 1190.00</td>
@@ -279,7 +279,7 @@
                                               </ul>
                                           </td>
                                           <td>
-                                              <button type="button" class="btn btn-sm btn-outline-danger round">Psychiatrist</button>
+                                              <button type="button" class="btn btn-info btn-glow round px-2">Psychiatrist</button>
                                           </td>
                                           <td class="text-truncate">11:00 A.M. - 2:00 P.M.</td>
                                           <td class="text-truncate">$ 999.00</td>
@@ -297,7 +297,7 @@
                                               </ul>
                                           </td>
                                           <td>
-                                              <button type="button" class="btn btn-sm btn-outline-success round">Gastroenterologist</button>
+                                              <button type="button" class="btn btn-info btn-glow round px-2">Gastroenterologist</button>
                                           </td>
                                           <td class="text-truncate">11:30 A.M. - 3:00 P.M.</td>
                                           <td class="text-truncate">$ 1150.00</td>
@@ -315,7 +315,8 @@
                                               </ul>
                                           </td>
                                           <td>
-                                              <button type="button" class="btn btn-sm btn-outline-danger round">Pediatrician</button>
+                                              {{-- <button type="button" class="btn btn-info btn-glow round px-2">Pediatrician</button> --}}
+                                              <button type="button" class="btn btn-info btn-glow round px-2">Pediatrician</button>
                                           </td>
                                           <td class="text-truncate">5:00 P.M. - 8:00 P.M.</td>
                                           <td class="text-truncate">$ 1180.00</td>

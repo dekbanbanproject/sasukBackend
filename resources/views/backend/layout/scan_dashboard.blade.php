@@ -3,7 +3,8 @@
 
     @include('backend/layout/scan_header')
 
-<body class="vertical-layout vertical-menu 2-columns   fixed-navbar" data-open="click" data-menu="vertical-menu" data-col="2-columns">
+    <body class="vertical-layout vertical-menu 2-columns   fixed-navbar" data-open="click" data-menu="vertical-menu" data-col="2-columns">
+    
   
     @include('backend/layout/scan_nav')  
 
@@ -16,9 +17,8 @@
 
     @include('backend/layout/scan_footer')
 
-    {{-- <script src="{{ asset('app-assets/js/progress.js') }}"></script> --}}
-
-<script>
+   
+{{-- <script>
     $(window).on("load", function(){
 
     //Get the context of the Chart canvas element we want to select
@@ -95,7 +95,7 @@
     // Create the chart
     var lineChart = new Chart(ctx, config);
     });
-</script>
+</script> --}}
 
 
 </body>
