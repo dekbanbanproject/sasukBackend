@@ -10,6 +10,7 @@ use Laravel\Socialite\Facades\Socialite;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class UserAuthController extends Controller
 {
@@ -328,8 +329,106 @@ function backend_dashboard(Request $request)
     // $maxch = 500;
     // $buil_maehongsoncen = $buil_maehongson * 100 / $maxch;
 
+    $m_budget = date("m");
+
+    $m_budget = date("m");
+    if($m_budget>9){
+    $yearbudget = date("Y")+544;
+    }else{
+    $yearbudget = date("Y")+543;
+    }
+    
+    $year_id = $yearbudget;
+
+    $year24 = $year_id - 540;  //2524
+    $year23 = $year_id - 541;  //2523
+    $year22 = $year_id - 542;  //2522
+    $year21 = $year_id - 543;  //2521
+    $year20 = $year_id - 544;  // 2520
+    $year19 = $year_id - 545;  //2519
+
+    $day =  date("y-m-d");
+    // $year =  date("y-m-d");
+    // $year = date("m");
+    // $mont = date("m");
+    $date = Carbon::now();
+
+    $opdcount = DB::table('tb_opd')->count();
+    $ipdcount = DB::table('tb_ipd')->count();
+
+    $opdcountL = DB::table('tb_opd')->where('datescan','=',$day)->count();
+    $ipdcountL = DB::table('tb_ipd')->where('datescan','=',$day)->count();
+
+   
+
+    $opd122 = DB::table('tb_opd')->where('datescan','like',$year22.'-01%')->sum('pages');
+    $opd222 = DB::table('tb_opd')->where('datescan','like',$year22.'-02%')->sum('pages');
+    $opd322 = DB::table('tb_opd')->where('datescan','like',$year22.'-03%')->sum('pages');
+    $opd422 = DB::table('tb_opd')->where('datescan','like',$year22.'-04%')->sum('pages');
+    $opd522 = DB::table('tb_opd')->where('datescan','like',$year22.'-05%')->sum('pages');
+    $opd622 = DB::table('tb_opd')->where('datescan','like',$year22.'-06%')->sum('pages');
+    $opd722 = DB::table('tb_opd')->where('datescan','like',$year22.'-07%')->sum('pages');
+    $opd822 = DB::table('tb_opd')->where('datescan','like',$year22.'-08%')->sum('pages');
+    $opd922 = DB::table('tb_opd')->where('datescan','like',$year22.'-09%')->sum('pages');
+    $opd1022 = DB::table('tb_opd')->where('datescan','like',$year22.'-10%')->sum('pages');
+    $opd1122 = DB::table('tb_opd')->where('datescan','like',$year22.'-11%')->sum('pages');
+    $opd1222 = DB::table('tb_opd')->where('datescan','like',$year22.'-12%')->sum('pages');
+
+    $opd1 = DB::table('tb_opd')->where('datescan','like',$year21.'-01%')->sum('pages');
+    $opd2 = DB::table('tb_opd')->where('datescan','like',$year21.'-02%')->sum('pages');
+    $opd3 = DB::table('tb_opd')->where('datescan','like',$year21.'-03%')->sum('pages');
+    $opd4 = DB::table('tb_opd')->where('datescan','like',$year21.'-04%')->sum('pages');
+    $opd5 = DB::table('tb_opd')->where('datescan','like',$year21.'-05%')->sum('pages');
+    $opd6 = DB::table('tb_opd')->where('datescan','like',$year21.'-06%')->sum('pages');
+    $opd7 = DB::table('tb_opd')->where('datescan','like',$year21.'-07%')->sum('pages');
+    $opd8 = DB::table('tb_opd')->where('datescan','like',$year21.'-08%')->sum('pages');
+    $opd9 = DB::table('tb_opd')->where('datescan','like',$year21.'-09%')->sum('pages');
+    $opd10 = DB::table('tb_opd')->where('datescan','like',$year21.'-10%')->sum('pages');
+    $opd11 = DB::table('tb_opd')->where('datescan','like',$year21.'-11%')->sum('pages');
+    $opd12 = DB::table('tb_opd')->where('datescan','like',$year21.'-12%')->sum('pages');
+
+    $opd11 = DB::table('tb_opd')->where('datescan','like',$year20.'-01%')->sum('pages');
+    $opd21 = DB::table('tb_opd')->where('datescan','like',$year20.'-02%')->sum('pages');
+    $opd31 = DB::table('tb_opd')->where('datescan','like',$year20.'-03%')->sum('pages');
+    $opd41 = DB::table('tb_opd')->where('datescan','like',$year20.'-04%')->sum('pages');
+    $opd51 = DB::table('tb_opd')->where('datescan','like',$year20.'-05%')->sum('pages');
+    $opd61 = DB::table('tb_opd')->where('datescan','like',$year20.'-06%')->sum('pages');
+    $opd71 = DB::table('tb_opd')->where('datescan','like',$year20.'-07%')->sum('pages');
+    $opd81 = DB::table('tb_opd')->where('datescan','like',$year20.'-08%')->sum('pages');
+    $opd91 = DB::table('tb_opd')->where('datescan','like',$year20.'-09%')->sum('pages');
+    $opd101 = DB::table('tb_opd')->where('datescan','like',$year20.'-10%')->sum('pages');
+    $opd111 = DB::table('tb_opd')->where('datescan','like',$year20.'-11%')->sum('pages');
+    $opd121 = DB::table('tb_opd')->where('datescan','like',$year20.'-12%')->sum('pages');
+
+    $opd12 = DB::table('tb_opd')->where('datescan','like',$year19.'-01%')->sum('pages');
+    $opd22 = DB::table('tb_opd')->where('datescan','like',$year19.'-02%')->sum('pages');
+    $opd32 = DB::table('tb_opd')->where('datescan','like',$year19.'-03%')->sum('pages');
+    $opd42 = DB::table('tb_opd')->where('datescan','like',$year19.'-04%')->sum('pages');
+    $opd52 = DB::table('tb_opd')->where('datescan','like',$year19.'-05%')->sum('pages');
+    $opd62 = DB::table('tb_opd')->where('datescan','like',$year19.'-06%')->sum('pages');
+    $opd72 = DB::table('tb_opd')->where('datescan','like',$year19.'-07%')->sum('pages');
+    $opd82 = DB::table('tb_opd')->where('datescan','like',$year19.'-08%')->sum('pages');
+    $opd92 = DB::table('tb_opd')->where('datescan','like',$year19.'-09%')->sum('pages');
+    $opd102 = DB::table('tb_opd')->where('datescan','like',$year19.'-10%')->sum('pages');
+    $opd112 = DB::table('tb_opd')->where('datescan','like',$year19.'-11%')->sum('pages');
+    $opd122 = DB::table('tb_opd')->where('datescan','like',$year19.'-12%')->sum('pages');
+
     return view('backend/layout/scan_dashboard',[
-        'data'=>$data,
+
+        'data'=>$data,'day'=>$day,
+        'opdcount'=>$opdcount,'ipdcount'=>$ipdcount,'opdcountL'=>$opdcountL,'ipdcountL'=>$ipdcountL,
+        'opd1'=>$opd1,'opd2'=>$opd2, 'opd3'=>$opd3,'opd4'=>$opd4, 'opd5'=>$opd5,'opd6'=>$opd6, 
+        'opd7'=>$opd7,'opd8'=>$opd8, 'opd9'=>$opd9,'opd10'=>$opd10,'opd11'=>$opd11,'opd12'=>$opd12,
+
+        'opd11'=>$opd11,'opd21'=>$opd21, 'opd31'=>$opd31,'opd41'=>$opd41, 'opd51'=>$opd51,'opd61'=>$opd61, 
+        'opd71'=>$opd71,'opd81'=>$opd81, 'opd91'=>$opd91,'opd101'=>$opd101,'opd111'=>$opd111,'opd121'=>$opd121,
+
+        'opd12'=>$opd12,'opd22'=>$opd22, 'opd32'=>$opd32,'opd42'=>$opd42, 'opd52'=>$opd52,'opd62'=>$opd62, 
+        'opd72'=>$opd72,'opd82'=>$opd82, 'opd92'=>$opd92,'opd102'=>$opd102,'opd112'=>$opd112,'opd122'=>$opd122,
+
+        'opd122'=>$opd122,'opd222'=>$opd222, 'opd322'=>$opd322,'opd422'=>$opd422, 'opd522'=>$opd522,'opd622'=>$opd622, 
+        'opd722'=>$opd722,'opd822'=>$opd822, 'opd922'=>$opd922,'opd1022'=>$opd1022,'opd1122'=>$opd1122,'opd1222'=>$opd1222,
+
         // 'assetscen'=>$assetscen,'assetbuildingscen'=>$assetbuildingscen,
         // 'hos'=>$hos,'buil_chaingmaicen'=>$buil_chaingmaicen,'buil_lamphooncen'=>$buil_lamphooncen,'buil_lampangcen'=>$buil_lampangcen,
         // 'buil_praegcen'=>$buil_praegcen, 'buil_nangcen'=>$buil_nangcen,'buil_payouacen'=>$buil_payouacen,'buil_chaingraycen'=>$buil_chaingraycen,'buil_maehongsoncen'=>$buil_maehongsoncen,

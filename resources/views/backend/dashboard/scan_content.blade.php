@@ -16,8 +16,8 @@
                                       <i class="la la-user-md font-large-2 success"></i>
                                   </div>
                                   <div class="media-body text-right">
-                                      <h5 class="text-muted text-bold-500">Doctors Available</h5>
-                                      <h3 class="text-bold-600">122</h3>
+                                      <h5 class="text-muted text-bold-500"> OPD Scan</h5>
+                                      <h3 class="text-bold-600">{{$opdcount}}</h3>
                                   </div>
                               </div>
                           </div>
@@ -25,22 +25,40 @@
                   </div>
               </div>
               <div class="col-xl-3 col-lg-6 col-md-6 col-12">
-                  <div class="card pull-up">
-                      <div class="card-content">
-                          <div class="card-body">
-                              <div class="media d-flex">
-                                  <div class="align-self-center">
-                                      <i class="la la-stethoscope font-large-2 warning"></i>
-                                  </div>
-                                  <div class="media-body text-right">
-                                      <h5 class="text-muted text-bold-500">Visiting Doctors</h5>
-                                      <h3 class="text-bold-600">34</h3>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
+                <div class="card pull-up">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="media d-flex">
+                                <div class="align-self-center">
+                                    <i class="la la-stethoscope font-large-2 warning"></i>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h5 class="text-muted text-bold-500">OPD Scan Today</h5>
+                                    <h3 class="text-bold-600">{{$opdcountL}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                <div class="card pull-up">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="media d-flex">
+                                <div class="align-self-center">
+                                    <i class="la la-bed font-large-2 danger"></i>
+                                </div>
+                                <div class="media-body text-right">
+                                    <h5 class="text-muted text-bold-500"> IPD Scan</h5>
+                                    <h3 class="text-bold-600">{{$ipdcount}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
               </div>
+             
               <div class="col-xl-3 col-lg-6 col-md-6 col-12">
                   <div class="card pull-up">
                       <div class="card-content">
@@ -50,31 +68,15 @@
                                       <i class="la la-calendar-check-o font-large-2 info"></i>
                                   </div>
                                   <div class="media-body text-right">
-                                      <h5 class="text-muted text-bold-500">Today's Inquiry</h5>
-                                      <h3 class="text-bold-600">3.5K</h3>
+                                      <h5 class="text-muted text-bold-500">IPD Scan Today </h5>
+                                      <h3 class="text-bold-600">{{$ipdcountL}}</h3>
                                   </div>
                               </div>
                           </div>
                       </div>
                   </div>
               </div>
-              <div class="col-xl-3 col-lg-6 col-md-6 col-12">
-                  <div class="card pull-up">
-                      <div class="card-content">
-                          <div class="card-body">
-                              <div class="media d-flex">
-                                  <div class="align-self-center">
-                                      <i class="la la-bed font-large-2 danger"></i>
-                                  </div>
-                                  <div class="media-body text-right">
-                                      <h5 class="text-muted text-bold-500">Rooms Available</h5>
-                                      <h3 class="text-bold-600">179</h3>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+              
           </div>
           <!-- Hospital Info cards Ends -->
 
@@ -95,8 +97,8 @@
                           </div>
                       </div>
                       <div class="card-content collapse show">
-                          <div class="card-body chartjs">
-                              <canvas id="combo-bar-line" height="400"></canvas>
+                          <div class="card-body ">
+                              <canvas id="comboscan" height="400"></canvas>
                           </div>
                       </div>
                   </div>

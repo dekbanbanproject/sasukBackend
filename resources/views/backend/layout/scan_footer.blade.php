@@ -21,3 +21,4 @@
 <!-- BEGIN: Page JS-->
 <script src="{{ asset('app-assets/js/scripts/pages/appointment.js') }}"></script>
 <!-- END: Page JS-->
+
