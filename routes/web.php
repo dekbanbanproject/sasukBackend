@@ -26,7 +26,7 @@ Route::get('fontend/blog/index','FontController@index');
 Route::match(['get','post'],'fontend/about','FontController@about')->name('about');
 
 //===============================================================================================================//
-Route::get('backend/editprofile',[UserController::class,'editprofile'])->name('user.editprofile');
+Route::get('backend/profile/editprofile',[UserController::class,'editprofile'])->name('user.editprofile');
 Route::get('login',[UserAuthController::class,'login']);
 Route::get('register',[UserAuthController::class,'register']);
 Route::get('logout',[UserAuthController::class,'logout']);
